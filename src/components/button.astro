@@ -1,0 +1,81 @@
+---
+/**
+ * Reusable Button Component
+ *
+ * @example
+ * <!-- Primary button -->
+ * <Button variant="primary" size="lg">Click Me</Button>
+ *
+ * <!-- Secondary button with link -->
+ * <Button variant="secondary" href="/contact">Contact Us</Button>
+ *
+ * <!-- Full width button -->
+ * <Button variant="primary" fullWidth>Submit</Button>
+ */
+export interface Props {
+  variant?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg" | "xl";
+  fullWidth?: boolean;
+  href?: string;
+  type?: "button" | "submit" | "reset";
+  class?: string;
+}
+
+const {
+  variant = "primary",
+  size = "md",
+  fullWidth = false,
+  href,
+  type = "button",
+  class: className = "",
+  ...rest
+} = Astro.props;
+
+// Base classes for all buttons
+const baseClasses =
+  "font-bold uppercase transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg leading-none";
+
+// Variant classes
+const variantClasses: Record<string, string> = {
+  primary:
+    "bg-primary text-white border-2 border-primary hover:bg-white hover:text-primary focus:ring-primary",
+  secondary:
+    "bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white focus:ring-white",
+};
+
+// Size classes
+const sizeClasses: Record<string, string> = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-3 text-md lg:text-base",
+  lg: "px-8 py-4 text-base lg:text-lg",
+  xl: "px-10 py-4 lg:py-5 text-lg lg:text-xl",
+};
+
+// Width classes
+const widthClasses = fullWidth ? "w-full" : "";
+
+// Combine all classes
+const buttonClasses =
+  `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClasses} ${className}`.trim();
+
+// If href is provided, render as anchor tag
+
+const isExternal = href?.startsWith("http") || href?.startsWith("//");
+const target = isExternal ? "_blank" : undefined;
+const rel = isExternal ? "noopener noreferrer" : undefined;
+---
+
+{
+  href && (
+    <a href={href} class={buttonClasses} target={target} rel={rel} {...rest}>
+      <slot />
+    </a>
+  )
+}
+{
+  !href && (
+    <button type={type} class={buttonClasses} {...rest}>
+      <slot />
+    </button>
+  )
+}

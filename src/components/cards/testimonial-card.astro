@@ -1,0 +1,76 @@
+---
+export interface Props {
+  date: string;
+  clientName: string;
+  clientTitle: string;
+  testimonial: string;
+  rating?: number;
+  class?: string;
+}
+
+const {
+  date,
+  clientName,
+  clientTitle,
+  testimonial,
+  rating = 5,
+  class: className = "",
+} = Astro.props;
+
+// Generate initials from client name
+const initials = clientName
+  .split(" ")
+  .map((name) => name[0])
+  .join("")
+  .toUpperCase();
+---
+
+<div class={`bg-white rounded-lg shadow-lg p-4 md:p-6 ${className}`}>
+  <!-- Top Row -->
+  <div class="mb-4 flex items-center justify-between">
+    <!-- Testimonials Tag -->
+    <div class="bg-primary rounded-full px-3 py-1">
+      <span class="text-xs font-semibold text-white uppercase"
+        >Testimonials</span
+      >
+    </div>
+
+    <!-- Date -->
+    <span class="text-xs text-gray-600 sm:text-sm">{date}</span>
+  </div>
+
+  <!-- Separator Line -->
+  <div class="mb-6 border-t border-dashed border-blue-200"></div>
+
+  <!-- Client Information -->
+  <div class="mb-6 flex items-center">
+    <!-- Avatar -->
+    <div
+      class="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-purple-500"
+    >
+      <span class="text-lg font-bold text-white">{initials}</span>
+    </div>
+
+    <!-- Client Details -->
+    <div>
+      <h4 class="font-bold text-gray-900">{clientName}</h4>
+      <p class="text-sm text-gray-600">{clientTitle}</p>
+    </div>
+  </div>
+
+  <!-- Testimonial Text -->
+  <p class="mb-6 leading-relaxed text-gray-700">
+    "{testimonial}"
+  </p>
+
+  <!-- Rating Stars -->
+  <div class="flex">
+    {
+      Array.from({ length: rating }, (_, i) => (
+        <svg class="text-primary h-5 w-5 fill-current" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,35 @@
+---
+export interface Props {
+  icon: any;
+  title: string;
+  description: string;
+  class?: string;
+}
+
+const { icon, title, description, class: className = "" } = Astro.props;
+---
+
+<div
+  class={`bg-white rounded-md border text-center lg:text-left border-border-gray p-4 md:p-6 pb-8 md:pb-12  ${className}`}
+>
+  <!-- Icon -->
+  <div class="mb-6 flex justify-center lg:justify-start">
+    <div class="flex h-16 w-16 items-center justify-center lg:h-24 lg:w-24">
+      <img
+        src={icon.src || icon}
+        alt={title}
+        class="h-full w-full object-contain"
+      />
+    </div>
+  </div>
+
+  <!-- Title -->
+  <h3 class="mb-4 text-xl font-bold text-gray-900">
+    {title}
+  </h3>
+
+  <!-- Description -->
+  <p class="leading-relaxed text-gray-700">
+    {description}
+  </p>
+</div>

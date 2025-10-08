@@ -1,0 +1,96 @@
+---
+import Button from "../button.astro";
+---
+
+<div
+  class="relative min-h-screen w-full bg-[url('../../../public/images/home/hero-bg.jpg')] bg-cover bg-center bg-no-repeat bg-blend-darken"
+>
+  <div class="bg-primary/90 absolute top-0 left-0 h-full w-full"></div>
+
+  <!-- Main Content Container -->
+  <div
+    class="relative z-10 flex min-h-screen items-center px-4 py-8 pt-36 lg:pt-0"
+  >
+    <div
+      class="container mx-auto flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-12"
+    >
+      <!-- Left Section - Main Content -->
+      <div
+        class="mb-10 max-w-[800px] flex-1 space-y-6 text-center text-white lg:mb-0 lg:text-left"
+      >
+        <!-- Small Heading -->
+        <p class="text-lg font-normal text-white/90 lg:text-xl">
+          STRUGGLING TO FILL VACANCIES IN YOUR SENIOR LIVING FACILITY?
+        </p>
+
+        <!-- Main Heading -->
+        <h1 class="text-3xl leading-tight font-bold lg:text-5xl xl:text-5xl">
+          GET 2-5 NEW RESIDENTS EVERY MONTH COST EFFECTIVELY AND EFFICIENTLY
+        </h1>
+
+        <!-- Description Paragraph -->
+        <p
+          class="font-poppins max-auto max-w-2xl text-center leading-relaxed text-white/90 lg:mx-0 lg:text-left"
+        >
+          At SeniorLead, we specialize in helping senior living communities like
+          yours attract qualified leads, fill vacancies, and maximize marketing
+          ROI. Let us help you achieve your occupancy goals—without wasting your
+          budget.
+        </p>
+
+        <!-- CTA Button -->
+        <div class="flex flex-col items-center space-y-4 lg:items-start">
+          <Button variant="primary" size="xl" class="border-white">
+            FREE DOWNLOAD
+          </Button>
+
+          <!-- Link Text -->
+          <p
+            class="font-poppins cursor-pointer text-sm text-white/80 underline transition-colors hover:text-white lg:text-base"
+          >
+            See How We Helped Increase Occupancy by 25%
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Section - Consultation Box -->
+      <div class="max-w-[500px] lg:w-[500px]">
+        <div
+          class="relative h-[330px] overflow-hidden rounded-lg bg-white p-8 shadow-xl lg:h-[430px]"
+        >
+          <!-- Background Pattern Placeholder (for SVG later) -->
+          <div
+            class="absolute top-0 right-0 h-32 w-32 translate-x-16 -translate-y-16 rounded-full bg-blue-100/30"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 left-0 h-24 w-24 -translate-x-12 translate-y-12 rounded-full bg-blue-100/20"
+          >
+          </div>
+
+          <div class="relative z-10 flex h-full flex-col space-y-6">
+            <!-- Consultation Heading -->
+            <h3 class="text-primary text-2xl font-bold lg:text-3xl">
+              SCHEDULE MY FREE CONSULTATION
+            </h3>
+
+            <!-- Description -->
+            <p
+              class="font-poppins text-base leading-relaxed text-gray-700 lg:text-lg"
+            >
+              Explore how you can increase Occupancy at Lower Cost Than You
+              Think
+            </p>
+
+            <!-- Schedule Button -->
+            <div class="mt-auto flex flex-1 items-end">
+              <Button variant="secondary" size="xl" fullWidth>
+                SCHEDULE NOW
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

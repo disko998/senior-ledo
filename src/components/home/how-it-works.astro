@@ -1,0 +1,227 @@
+---
+import Image from "astro/components/Image.astro";
+import step2Image from "../../../public/images/home/how-it-works/how-it-works-img1.jpg";
+import step3Image from "../../../public/images/home/how-it-works/how-it-works-img2.jpg";
+import blueBgShapes from "../../../public/images/home/blue-bg-shapes.png";
+---
+
+<section class="bg-primary relative overflow-hidden py-16 lg:py-24">
+  <!-- Background Shapes Image -->
+  <div class="absolute inset-0">
+    <Image
+      src={blueBgShapes}
+      alt="Blue background shapes"
+      class="h-full w-full object-cover opacity-20"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="relative z-10 container mx-auto px-4">
+    <!-- Main Heading -->
+    <h2 class="mb-20 text-center text-white">
+      How It Works: Our 4-Step Process
+    </h2>
+
+    <!-- Desktop Timeline Container -->
+    <div class="mx-auto hidden max-w-6xl lg:block">
+      <div class="mb-8 w-full text-center">
+        <h3 class="mb-3 text-white">DISCOVERY CALL</h3>
+        <p class="text-lg text-white/90">We get to know your facility</p>
+      </div>
+
+      <div
+        class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white"
+      >
+        <span class="text-primary text-3xl font-bold">1</span>
+      </div>
+
+      <div class="relative">
+        <!-- Central Timeline Line -->
+        <div
+          class="absolute top-0 bottom-0 left-1/2 w-1 -translate-x-1/2 transform bg-white"
+        >
+        </div>
+
+        <!-- Step 1: Discovery Call (Left) -->
+        <div class="flex items-center">
+          <div class="lg:flex lg:w-full lg:justify-center">
+            <div class="relative"></div>
+          </div>
+        </div>
+
+        <!-- Step 2: Custom Strategy (Right) -->
+        <div class="my-16 flex items-center">
+          <div class="lg:flex lg:w-full lg:justify-center">
+            <div class="flex flex-1 flex-col items-center">
+              <h3 class="mb-3 text-white">CUSTOM STRATEGY</h3>
+              <p class="text-lg text-white/90">
+                We create a plan tailored to your goals
+              </p>
+              <div class="relative mt-8 flex w-full flex-col items-center">
+                <!-- Timeline Circle -->
+                <div
+                  class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-white"
+                >
+                  <span class="text-primary text-3xl font-bold">2</span>
+                </div>
+
+                <div
+                  class="absolute top-1/2 left-1/2 h-[1px] w-1/2 -translate-y-1/2 bg-white"
+                >
+                  <div
+                    class="absolute top-1/2 -right-2.5 h-5 w-5 -translate-y-1/2 rounded-full bg-white"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full text-center lg:w-full lg:text-left">
+            <!-- Desktop Image -->
+            <div class="ml-[20%] hidden lg:block">
+              <div
+                class="mx-auto h-56 w-56 overflow-hidden rounded-full lg:mx-0"
+              >
+                <Image
+                  src={step2Image}
+                  alt="Person typing on laptop with dashboard showing graphs"
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Campaign Launch (Left) -->
+        <div class="my-16 flex items-center">
+          <div class="w-full text-center lg:w-full lg:text-right">
+            <!-- Desktop Image -->
+            <div class="mr-[20%] hidden lg:block">
+              <div class="ml-auto h-56 w-56 overflow-hidden rounded-full">
+                <Image
+                  src={step3Image}
+                  alt="Person holding smartphone with charts and graphs on screen"
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="lg:flex lg:w-full lg:justify-center">
+            <div class="flex flex-1 flex-col items-center">
+              <h3 class="mb-3 text-white">CAMPAIGN LAUNCH</h3>
+              <p class="text-lg text-white/90">
+                Ads go live, leads start flowing
+              </p>
+              <div class="relative mt-8 flex w-full flex-col items-center">
+                <!-- Timeline Circle -->
+                <div
+                  class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-white"
+                >
+                  <span class="text-primary text-3xl font-bold">3</span>
+                </div>
+
+                <div
+                  class="absolute top-1/2 right-1/2 h-[1px] w-1/2 -translate-y-1/2 bg-white"
+                >
+                  <div
+                    class="absolute top-1/2 -left-2.5 h-5 w-5 -translate-y-1/2 rounded-full bg-white"
+                  >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Optimization & Reporting (Right) -->
+        <div class="flex items-center">
+          <div class="lg:flex lg:w-full lg:justify-center">
+            <div class="relative">
+              <!-- Timeline Circle -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto hidden h-20 w-20 items-center justify-center rounded-full bg-white lg:flex"
+    >
+      <span class="text-primary text-3xl font-bold">4</span>
+    </div>
+
+    <div class="mt-8 hidden w-full text-center lg:block lg:w-full">
+      <h3 class="mb-3 text-white">OPTIMIZATION & REPORTING</h3>
+      <p class="text-lg text-white/90">We tweak and improve continuously</p>
+    </div>
+
+    <!-- Mobile Timeline Container -->
+    <div class="mx-auto max-w-md lg:hidden">
+      <!-- Step 1: Discovery Call -->
+      <div class="mb-12 text-center">
+        <div
+          class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white"
+        >
+          <span class="text-primary text-2xl font-bold">1</span>
+        </div>
+        <h3 class="mb-3 text-white">DISCOVERY CALL</h3>
+        <p class="text-lg text-white/90">We get to know your facility</p>
+      </div>
+
+      <!-- Step 2: Custom Strategy -->
+      <div class="mb-12 text-center">
+        <div
+          class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white"
+        >
+          <span class="text-primary text-2xl font-bold">2</span>
+        </div>
+        <h3 class="mb-3 text-white">CUSTOM STRATEGY</h3>
+        <p class="mb-6 text-lg text-white/90">
+          We create a plan tailored to your goals
+        </p>
+        <div class="mx-auto h-40 w-40 overflow-hidden rounded-full">
+          <Image
+            src={step2Image}
+            alt="Person typing on laptop with dashboard showing graphs"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Step 3: Campaign Launch -->
+      <div class="mb-12 text-center">
+        <div
+          class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white"
+        >
+          <span class="text-primary text-2xl font-bold">3</span>
+        </div>
+        <h3 class="mb-3 text-white">CAMPAIGN LAUNCH</h3>
+        <p class="mb-6 text-lg text-white/90">
+          Ads go live, leads start flowing
+        </p>
+        <div class="mx-auto h-40 w-40 overflow-hidden rounded-full">
+          <Image
+            src={step3Image}
+            alt="Person holding smartphone with charts and graphs on screen"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Step 4: Optimization & Reporting -->
+      <div class="text-center">
+        <div
+          class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white"
+        >
+          <span class="text-primary text-2xl font-bold">4</span>
+        </div>
+        <h3 class="mb-3 text-white">OPTIMIZATION & REPORTING</h3>
+        <p class="text-lg text-white/90">We tweak and improve continuously</p>
+      </div>
+    </div>
+  </div>
+</section>

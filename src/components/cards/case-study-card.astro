@@ -1,0 +1,97 @@
+---
+import Button from "../button.astro";
+
+export interface Props {
+  icon: any;
+  title: string;
+  subtitle: string;
+  metric: string;
+  metricLabel: string;
+  growth: string;
+  growthDescription: string;
+  description: string;
+  buttonText?: string;
+  class?: string;
+}
+
+const {
+  icon,
+  title,
+  subtitle,
+  metric,
+  metricLabel,
+  growth,
+  growthDescription,
+  description,
+  buttonText = "VIEW CASE STUDY",
+  class: className = "",
+} = Astro.props;
+---
+
+<div
+  class={`bg-white rounded-md border border-border-gray p-4 md:p-6 ${className}`}
+>
+  <!-- Header Section -->
+  <div class="mb-6 flex items-center">
+    <div class="mr-4 flex h-12 w-12 items-center justify-center">
+      <img
+        src={icon.src || icon}
+        alt={title}
+        class="h-full w-full object-contain"
+      />
+    </div>
+    <div>
+      <p class="text-lg font-extrabold text-gray-900 lg:text-3xl">{title}</p>
+      <p class="text-sm text-gray-600">{subtitle}</p>
+    </div>
+  </div>
+
+  <!-- Key Metric Display -->
+  <div class="mb-4 rounded-md bg-blue-50 px-4 py-3">
+    <div class="flex items-center">
+      <span class="text-primary text-3xl font-bold">{metric}</span>
+      <span class="text-primary ml-3 text-sm">{metricLabel}</span>
+    </div>
+  </div>
+
+  <!-- Growth Indicator -->
+  <div class="mb-4 flex items-center">
+    <svg
+      class="text-primary mr-2 h-4 w-4"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+        clip-rule="evenodd"></path>
+    </svg>
+    <span class="text-primary mr-2 text-sm font-semibold">{growth}</span>
+    <span class="text-sm text-gray-700">{growthDescription}</span>
+  </div>
+
+  <!-- Graph Section (Placeholder) -->
+  <div class="mb-4 rounded-md bg-gray-50 p-4">
+    <div class="flex h-20 items-end justify-between space-x-1">
+      <!-- Bar Chart Placeholder -->
+      <div class="bg-primary h-8 w-4 rounded-t"></div>
+      <div class="bg-primary h-12 w-4 rounded-t"></div>
+      <div class="bg-primary h-16 w-4 rounded-t"></div>
+      <div class="bg-primary h-20 w-4 rounded-t"></div>
+      <div class="bg-primary h-14 w-4 rounded-t"></div>
+      <div class="bg-primary h-18 w-4 rounded-t"></div>
+      <div class="bg-primary h-22 w-4 rounded-t"></div>
+      <div class="bg-primary h-24 w-4 rounded-t"></div>
+    </div>
+  </div>
+
+  <!-- Description Text -->
+  <p class="mb-6 text-sm leading-relaxed text-gray-700">
+    {description}
+  </p>
+
+  <!-- Call to Action Button -->
+  <Button variant="secondary" size="lg" fullWidth>
+    {buttonText}
+  </Button>
+</div>

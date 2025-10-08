@@ -1,0 +1,77 @@
+---
+import TestimonialCard from "../cards/testimonial-card.astro";
+import Image from "astro/components/Image.astro";
+import blueBgShapes from "../../../public/images/home/blue-bg-shapes.png";
+---
+
+<section class="bg-primary relative overflow-hidden py-16 lg:py-24">
+  <!-- Background Shapes Image -->
+  <div class="absolute inset-0">
+    <Image
+      src={blueBgShapes}
+      alt="Blue background shapes"
+      class="h-full w-full object-cover opacity-20"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="relative z-10 container mx-auto px-4">
+    <!-- Header Content -->
+    <div class="mb-16 max-w-4xl">
+      <h4
+        class="font-normal text-white uppercase sm:text-lg md:text-xl lg:text-2xl"
+      >
+        TESTIMONIALS
+      </h4>
+
+      <h2
+        class="mt-2.5 mb-4 text-3xl font-bold text-white uppercase lg:text-4xl"
+      >
+        BUILDING CREDIBILITY AND TRUST
+      </h2>
+
+      <p class="text-lg text-white/90">
+        Here's what some of our clients are saying about our service:
+      </p>
+    </div>
+
+    <!-- Testimonial Cards -->
+    <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Testimonial Card 1 -->
+      <TestimonialCard
+        date="26. June 2024."
+        clientName="Matt Briglia"
+        clientTitle="Lorem ipsum dolore"
+        testimonial="SeniorLead helped us fill vacancies faster than we ever thought possible. Their approach is both effective and affordable."
+        rating={5}
+      />
+
+      <!-- Testimonial Card 2 -->
+      <TestimonialCard
+        date="15. July 2024."
+        clientName="Sarah Johnson"
+        clientTitle="Facility Director"
+        testimonial="Thanks to Dan and his team, we've seen a significant increase in inquiries and admissions."
+        rating={5}
+      />
+
+      <!-- Testimonial Card 3 -->
+      <TestimonialCard
+        date="03. August 2024."
+        clientName="Michael Chen"
+        clientTitle="Operations Manager"
+        testimonial="Thanks to Dan and his team, we've seen a significant increase in inquiries and admissions."
+        rating={5}
+      />
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="flex justify-center space-x-2">
+      <div class="h-3 w-3 rounded-full bg-white"></div>
+      <div class="h-3 w-3 rounded-full bg-white/30"></div>
+      <div class="h-3 w-3 rounded-full bg-white/30"></div>
+      <div class="h-3 w-3 rounded-full bg-white/30"></div>
+      <div class="h-3 w-3 rounded-full bg-white/30"></div>
+    </div>
+  </div>
+</section>

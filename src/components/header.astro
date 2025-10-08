@@ -1,0 +1,127 @@
+---
+import logo from "@/assets/logo.svg";
+import Image from "astro/components/Image.astro";
+import Button from "@/components/button.astro";
+---
+
+<header class="absolute top-0 left-0 z-20 w-full">
+  <div class="container mx-auto px-4">
+    <nav class="flex h-20 items-center justify-between">
+      <Image src={logo} alt="logo" />
+
+      <!-- Navigation Menu -->
+      <div class="hidden items-center space-x-8 lg:flex">
+        <a
+          href="#"
+          class="border-b-2 border-white pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+        >
+          HOME
+        </a>
+        <a
+          href="#"
+          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+        >
+          ABOUT US
+        </a>
+        <a
+          href="#"
+          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+        >
+          INTERIOR PAINTING
+        </a>
+        <a
+          href="#"
+          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+        >
+          EXTERIOR PAINTING
+        </a>
+        <a
+          href="#"
+          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+        >
+          COMMERCIAL PAINTING
+        </a>
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <Button variant="secondary" size="lg"> FREE CONSULTATION </Button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button class="p-2 text-white" id="mobile-menu-button">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div
+      class="bg-primary hidden border-t border-white/20 lg:hidden"
+      id="mobile-menu"
+    >
+      <div class="space-y-4 px-4 py-4">
+        <a
+          href="#"
+          class="block border-b-2 border-white pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
+        >
+          HOME
+        </a>
+        <a
+          href="#"
+          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
+        >
+          ABOUT US
+        </a>
+        <a
+          href="#"
+          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
+        >
+          INTERIOR PAINTING
+        </a>
+        <a
+          href="#"
+          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
+        >
+          EXTERIOR PAINTING
+        </a>
+        <a
+          href="#"
+          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
+        >
+          COMMERCIAL PAINTING
+        </a>
+        <div class="pt-4">
+          <Button variant="secondary" size="xl" fullWidth>
+            FREE CONSULTATION
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  });
+</script>

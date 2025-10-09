@@ -1,0 +1,88 @@
+---
+import FaqDropdown from "../faq-dropdown.astro";
+---
+
+<section class="bg-white py-16 lg:py-24">
+  <div class="container mx-auto px-4">
+    <h2 class="text-primary font-bold uppercase">Frequently Asked Questions</h2>
+
+    <p class="mt-8 mb-4 font-semibold lg:text-2xl!">
+      Have questions about how we can help your senior living facility grow?
+    </p>
+
+    <p class="lg:text-base!">
+      We've compiled answers to the most common questions about our lead
+      generation and marketing services. <span class="font-bold"
+        >If you don't find what you're looking for, feel free to reach out—we're
+        happy to help!</span
+      >
+    </p>
+
+    <!-- FAQ Items -->
+    <div class="mt-12">
+      <FaqDropdown
+        number={1}
+        question="WHAT SERVICES DOES YOUR AGENCY PROVIDE?"
+        answer="We specialize in helping senior living facilities attract new residents through targeted lead generation campaigns. Additionally, we offer social media management services to enhance your facility's online presence and nurture relationships with potential clients."
+      />
+
+      <FaqDropdown
+        number={2}
+        question="HOW DOES THE LEAD GENERATION PROCESS WORK?"
+        answer="Our lead generation process focuses on reaching families and individuals actively searching for senior living options. We use advanced targeting and advertising strategies to connect you with qualified leads who are more likely to become residents."
+      />
+
+      <FaqDropdown
+        number={3}
+        question="WHAT MAKES YOUR SERVICES DIFFERENT FROM OTHER MARKETING AGENCIES?"
+        answer={`<p>Our services are tailored specifically for senior living facilities. We offer:</p>
+        <ul class="list-disc list-inside mt-6">
+          <li>Guaranteed exclusivity: We work with only one facility per area.</li>
+          <li>Cost-effective solutions: Our packages are designed to generate results at a lower cost than placing one resident.</li>
+          <li>Proven success: Our clients consistently see a steady increase in occupancy.</li>
+        </ul>`}
+      />
+
+      <FaqDropdown
+        number={4}
+        question="WHAT DOES THE SOCIAL MEDIA MANAGEMENT PACKAGE INCLUDE?"
+        answer={`<p>Our social media management package covers:</p>
+        <ul class="list-disc list-inside mt-6">
+          <li>Creating and managing posts across platforms like Facebook, Instagram, and LinkedIn.</li>
+          <li>Custom content tailored to your facility's brand and audience.</li>
+          <li>Monthly performance reports to track engagement and growth.</li>
+        </ul>`}
+      />
+
+      <FaqDropdown
+        number={5}
+        question="HOW MANY LEADS CAN I EXPECT TO RECEIVE EACH MONTH?"
+        answer="On average, our clients receive 2-5 qualified leads per month, depending on their area and campaign size. These leads are highly targeted, increasing the likelihood of conversion."
+      />
+
+      <FaqDropdown
+        number={6}
+        question="HOW DO YOU ENSURE EXCLUSIVITY IN MY AREA?"
+        answer="We guarantee that we will not work with other senior living facilities in your immediate area (200 miles). This ensures that our efforts are 100% dedicated to your success without benefiting your local competitors."
+      />
+
+      <FaqDropdown
+        number={7}
+        question="CAN I CUSTOMIZE THE PACKAGES TO SUIT MY NEEDS?"
+        answer="Yes, we can tailor our services to meet your facility's unique needs. During our consultation, we'll discuss your goals and design a solution that works best for you."
+      />
+
+      <FaqDropdown
+        number={8}
+        question="HOW SOON CAN I EXPECT RESULTS?"
+        answer="You'll start seeing initial results within the first month of your campaign, as leads begin to come in during the early weeks. However, it typically takes 2-3 months to see the full impact of our strategies. During the first month, we focus on setting up your campaigns, optimizing targeting, and building a remarketing base to ensure long-term success. This foundational work allows us to deliver consistent and measurable results in the following months."
+      />
+
+      <FaqDropdown
+        number={9}
+        question="WHAT'S THE NEXT STEP TO GET STARTED?"
+        answer="Simply schedule a consultation using the link provided, and we'll discuss your facility's needs and how we can help you achieve your goals. From there, we'll create a tailored plan and begin the onboarding process."
+      />
+    </div>
+  </div>
+</section>

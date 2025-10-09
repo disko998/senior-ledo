@@ -6,7 +6,7 @@ import phoneIcon from "@/assets/icons/phone.svg";
 import markerIcon from "@/assets/icons/marker.svg";
 ---
 
-<footer class="bg-white py-16">
+<footer class="bg-white pb-16">
   <div class="container mx-auto px-4">
     <!-- First Part of Footer -->
     <div class="mb-8 rounded-md border border-gray-300 bg-white p-8">
@@ -14,7 +14,9 @@ import markerIcon from "@/assets/icons/marker.svg";
         <!-- Left Content Area -->
         <div class="space-y-6">
           <!-- Logo -->
-          <Image src={logo} alt="logo" />
+          <div class="w-24 lg:w-30 xl:w-full">
+            <Image src={logo} alt="logo" />
+          </div>
 
           <!-- Description Text -->
           <p class="leading-relaxed text-gray-700">
@@ -36,7 +38,7 @@ import markerIcon from "@/assets/icons/marker.svg";
           <div class="space-y-4">
             <!-- Email -->
             <div class="flex items-center space-x-3">
-              <div class="flex h-6 w-6 items-center justify-center">
+              <div class="w-5wmd:-6 flex items-center justify-center">
                 <Image
                   src={envelopeIcon}
                   alt="Email"
@@ -48,7 +50,7 @@ import markerIcon from "@/assets/icons/marker.svg";
 
             <!-- Phone -->
             <div class="flex items-center space-x-3">
-              <div class="flex h-6 w-6 items-center justify-center">
+              <div class="flex w-5 items-center justify-center md:w-6">
                 <Image
                   src={phoneIcon}
                   alt="Phone"
@@ -60,7 +62,7 @@ import markerIcon from "@/assets/icons/marker.svg";
 
             <!-- Location -->
             <div class="flex items-center space-x-3">
-              <div class="flex h-6 w-6 items-center justify-center">
+              <div class="flex w-5 items-center justify-center md:w-6">
                 <Image
                   src={markerIcon}
                   alt="Location"

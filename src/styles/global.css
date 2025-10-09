@@ -20,13 +20,13 @@ body {
 }
 
 p {
-  @apply font-poppins text-xs sm:text-sm md:text-base lg:text-lg;
+  @apply font-poppins text-xs sm:text-sm md:text-base xl:text-lg;
 }
 
 span,
 li,
 a {
-  @apply font-poppins text-xs sm:text-sm md:text-base lg:text-lg;
+  @apply font-poppins text-xs sm:text-sm md:text-base xl:text-lg;
 }
 
 /* Custom styles for the hero layout */

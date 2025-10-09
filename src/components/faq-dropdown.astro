@@ -1,0 +1,122 @@
+---
+export interface Props {
+  question: string;
+  answer: string;
+  number: number;
+}
+
+const { question, answer, number } = Astro.props;
+---
+
+<div
+  class="faq-item overflow-hidden rounded-lg border border-gray-300 bg-white"
+>
+  <!-- Question Header -->
+  <button
+    class="faq-question relative w-full cursor-pointer px-6 transition-colors duration-200 hover:bg-gray-50"
+    data-faq-toggle
+  >
+    <div
+      class="question-container border-border-gray flex items-center justify-between py-5 text-left transition-all duration-300"
+    >
+      <span
+        class="font-sofia-sans-condensed text-base! font-extrabold text-gray-900 uppercase sm:text-xl! md:text-xl! lg:text-2xl! xl:text-3xl!"
+      >
+        {number}. {question}
+      </span>
+      <div class="faq-icon ml-4 flex-shrink-0">
+        <div
+          class="border-primary bg-primary flex h-6 w-6 items-center justify-center rounded-full border-2"
+        >
+          <svg
+            class="faq-minus-icon hidden h-3 w-3 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <svg
+            class="faq-plus-icon h-3 w-3 text-white"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </button>
+
+  <!-- Answer Content -->
+  <div class="faq-answer px-6 py-4 pb-4">
+    <div class="py-4">
+      <p
+        class="faq-content block leading-relaxed text-gray-700 xl:text-base!"
+        set:html={answer}
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  // FAQ Accordion Functionality
+  document.addEventListener("DOMContentLoaded", function () {
+    const faqItems = document.querySelectorAll("[data-faq-toggle]");
+
+    faqItems.forEach((item) => {
+      item.addEventListener("click", function (this: HTMLElement) {
+        const faqItem = this.closest(".faq-item") as HTMLElement;
+        if (!faqItem) return;
+
+        const questionContainer = faqItem.querySelector(
+          ".question-container",
+        ) as HTMLElement;
+        const answer = faqItem.querySelector(".faq-answer") as HTMLElement;
+        const content = faqItem.querySelector(".faq-content") as HTMLElement;
+        const minusIcon = faqItem.querySelector(
+          ".faq-minus-icon",
+        ) as HTMLElement;
+        const plusIcon = faqItem.querySelector(".faq-plus-icon") as HTMLElement;
+
+        if (!answer || !content || !minusIcon || !plusIcon) return;
+
+        // Toggle the answer visibility
+        if (answer.style.maxHeight && answer.style.maxHeight !== "0px") {
+          answer.style.maxHeight = "0px";
+          minusIcon.classList.add("hidden");
+          plusIcon.classList.remove("hidden");
+          questionContainer.style.borderBottomWidth = "0px";
+        } else {
+          answer.style.maxHeight = "400px";
+          minusIcon.classList.remove("hidden");
+          plusIcon.classList.add("hidden");
+          questionContainer.style.borderBottomWidth = "1px";
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .faq-item {
+    margin-bottom: 16px;
+  }
+
+  .faq-item:last-child {
+    margin-bottom: 0;
+  }
+</style>

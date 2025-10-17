@@ -6,38 +6,42 @@ import Button from "@/components/button.astro";
 
 <header class="absolute top-0 left-0 z-20 w-full">
   <div class="container mx-auto px-4">
-    <nav class="flex h-20 items-center justify-between">
-      <Image src={logo} alt="logo" />
+    <nav class="flex h-20 items-center justify-between sm:h-[95px]">
+      <div class="w-20 sm:w-24 md:w-[130px] lg:w-[150px]">
+        <Image src={logo} alt="logo" />
+      </div>
 
       <!-- Navigation Menu -->
-      <div class="hidden items-center space-x-8 lg:flex">
+      <div
+        class="hidden items-center space-x-4 lg:flex lg:space-x-6 xl:space-x-8"
+      >
         <a
           href="#"
-          class="border-b-2 border-white pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+          class="border-b-2 border-transparent pb-1 text-sm! font-semibold text-white uppercase hover:border-white xl:text-lg!"
         >
           HOME
         </a>
         <a
           href="#"
-          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+          class="border-b-2 border-transparent pb-1 text-sm! font-semibold text-white uppercase hover:border-white xl:text-lg!"
         >
           ABOUT US
         </a>
         <a
           href="#"
-          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+          class="border-b-2 border-transparent pb-1 text-sm! font-semibold text-white uppercase hover:border-white xl:text-lg!"
         >
           INTERIOR PAINTING
         </a>
         <a
           href="#"
-          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+          class="border-b-2 border-transparent pb-1 text-sm! font-semibold text-white uppercase hover:border-white xl:text-lg!"
         >
           EXTERIOR PAINTING
         </a>
         <a
           href="#"
-          class="pb-1 text-lg font-semibold text-white uppercase hover:border-b-2 hover:border-white"
+          class="border-b-2 border-transparent pb-1 text-sm! font-semibold text-white uppercase hover:border-white xl:text-lg!"
         >
           COMMERCIAL PAINTING
         </a>
@@ -66,43 +70,76 @@ import Button from "@/components/button.astro";
       </div>
     </nav>
 
-    <!-- Mobile Menu (Hidden by default) -->
+    <!-- Mobile Menu Overlay -->
     <div
-      class="bg-primary hidden border-t border-white/20 lg:hidden"
+      class="fixed inset-0 z-40 hidden bg-black/50 lg:hidden"
+      id="mobile-menu-overlay"
+    >
+    </div>
+
+    <!-- Mobile Menu Slider -->
+    <div
+      class="bg-primary fixed top-0 right-0 z-50 h-full w-full max-w-screen translate-x-full transform transition-transform duration-300 ease-in-out sm:max-w-[400px] lg:hidden"
       id="mobile-menu"
     >
-      <div class="space-y-4 px-4 py-4">
-        <a
-          href="#"
-          class="block border-b-2 border-white pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
+      <!-- Close Button -->
+      <div class="flex justify-end p-4">
+        <button
+          class="rounded-lg p-2 text-white transition-colors hover:bg-white/10"
+          id="mobile-menu-close"
         >
-          HOME
-        </a>
-        <a
-          href="#"
-          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
-        >
-          ABOUT US
-        </a>
-        <a
-          href="#"
-          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
-        >
-          INTERIOR PAINTING
-        </a>
-        <a
-          href="#"
-          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
-        >
-          EXTERIOR PAINTING
-        </a>
-        <a
-          href="#"
-          class="block pb-1 text-lg font-semibold text-white uppercase transition-all hover:border-b-2 hover:border-white"
-        >
-          COMMERCIAL PAINTING
-        </a>
-        <div class="pt-4">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="px-6 pb-6">
+        <nav class="space-y-6">
+          <a
+            href="#"
+            class="block border-b-2 border-transparent pb-2 text-lg font-semibold text-white uppercase transition-all hover:border-white"
+          >
+            HOME
+          </a>
+          <a
+            href="#"
+            class="block border-b-2 border-transparent pb-2 text-lg font-semibold text-white uppercase transition-all hover:border-white"
+          >
+            ABOUT US
+          </a>
+          <a
+            href="#"
+            class="block border-b-2 border-transparent pb-2 text-lg font-semibold text-white uppercase transition-all hover:border-white"
+          >
+            INTERIOR PAINTING
+          </a>
+          <a
+            href="#"
+            class="block border-b-2 border-transparent pb-2 text-lg font-semibold text-white uppercase transition-all hover:border-white"
+          >
+            EXTERIOR PAINTING
+          </a>
+          <a
+            href="#"
+            class="block border-b-2 border-transparent pb-2 text-lg font-semibold text-white uppercase transition-all hover:border-white"
+          >
+            COMMERCIAL PAINTING
+          </a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="pt-8">
           <Button variant="secondary" size="xl" fullWidth>
             FREE CONSULTATION
           </Button>
@@ -117,10 +154,54 @@ import Button from "@/components/button.astro";
   document.addEventListener("DOMContentLoaded", function () {
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuOverlay = document.getElementById("mobile-menu-overlay");
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
 
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener("click", function () {
-        mobileMenu.classList.toggle("hidden");
+    function openMobileMenu() {
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.remove("hidden");
+      if (mobileMenu) mobileMenu.classList.remove("translate-x-full");
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMobileMenu() {
+      if (mobileMenu) mobileMenu.classList.add("translate-x-full");
+      if (mobileMenuOverlay) mobileMenuOverlay.classList.add("hidden");
+      // Restore body scroll
+      document.body.style.overflow = "";
+    }
+
+    // Open menu
+    if (mobileMenuButton) {
+      mobileMenuButton.addEventListener("click", openMobileMenu);
+    }
+
+    // Close menu
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", closeMobileMenu);
+    }
+
+    // Close menu when clicking overlay
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+    }
+
+    // Close menu when pressing Escape key
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        mobileMenu &&
+        !mobileMenu.classList.contains("translate-x-full")
+      ) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu when clicking on navigation links
+    if (mobileMenu) {
+      const mobileNavLinks = mobileMenu.querySelectorAll("nav a");
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
       });
     }
   });

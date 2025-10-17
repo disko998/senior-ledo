@@ -1,36 +1,40 @@
 ---
 import Button from "../button.astro";
+import Image from "astro/components/Image.astro";
+import blueBgShapes from "../../../public/images/home/blue-bg-shapes.png";
 ---
 
-<div
+<section
   class="relative min-h-screen w-full bg-[url('../../../public/images/home/hero-bg.jpg')] bg-cover bg-center bg-no-repeat bg-blend-darken"
 >
   <div class="bg-primary/90 absolute top-0 left-0 h-full w-full"></div>
 
   <!-- Main Content Container -->
   <div
-    class="relative z-10 flex min-h-screen items-center px-4 py-8 pt-36 lg:pt-0"
+    class="relative z-10 flex min-h-screen items-center px-4 pt-36 pb-20 lg:pt-0 lg:pb-8"
   >
     <div
       class="container mx-auto flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-12"
     >
       <!-- Left Section - Main Content -->
       <div
-        class="mb-10 max-w-[800px] flex-1 space-y-6 text-center text-white lg:mb-0 lg:text-left"
+        class="mb-10 max-w-[750px] flex-1 space-y-6 text-center text-white lg:mb-0 lg:text-left"
       >
         <!-- Small Heading -->
-        <p class="text-lg font-normal text-white/90 lg:text-xl">
+        <p
+          class="font-sofia-sans-condensed mb-3 text-lg! leading-tight font-bold text-white/90! lg:text-xl! xl:text-2xl!"
+        >
           STRUGGLING TO FILL VACANCIES IN YOUR SENIOR LIVING FACILITY?
         </p>
 
         <!-- Main Heading -->
-        <h1 class="text-3xl leading-tight font-bold lg:text-5xl xl:text-5xl">
+        <h1>
           GET 2-5 NEW RESIDENTS EVERY MONTH COST EFFECTIVELY AND EFFICIENTLY
         </h1>
 
         <!-- Description Paragraph -->
         <p
-          class="font-poppins mx-auto max-w-2xl text-center leading-relaxed text-white/90 lg:mx-0 lg:text-left"
+          class="font-poppins mx-auto mb-7 max-w-2xl text-center leading-relaxed text-white/90! lg:mx-0 lg:text-left"
         >
           At SeniorLead, we specialize in helping senior living communities like
           yours attract qualified leads, fill vacancies, and maximize marketing
@@ -46,7 +50,7 @@ import Button from "../button.astro";
 
           <!-- Link Text -->
           <p
-            class="font-poppins cursor-pointer text-sm text-white/80 underline transition-colors hover:text-white lg:text-base"
+            class="font-poppins cursor-pointer text-sm font-semibold text-white/80! italic underline transition-colors hover:text-white lg:text-lg!"
           >
             See How We Helped Increase Occupancy by 25%
           </p>
@@ -54,7 +58,7 @@ import Button from "../button.astro";
       </div>
 
       <!-- Right Section - Consultation Box -->
-      <div class="max-w-[500px] lg:w-[500px]">
+      <div class="max-w-[433px] lg:mb-0 lg:w-[433px]">
         <div
           class="relative h-[330px] overflow-hidden rounded-lg bg-white p-8 shadow-xl lg:h-[430px]"
         >
@@ -70,14 +74,10 @@ import Button from "../button.astro";
 
           <div class="relative z-10 flex h-full flex-col space-y-6">
             <!-- Consultation Heading -->
-            <h3 class="text-primary text-2xl font-bold lg:text-3xl">
-              SCHEDULE MY FREE CONSULTATION
-            </h3>
+            <h3 class="text-primary">SCHEDULE MY FREE CONSULTATION</h3>
 
             <!-- Description -->
-            <p
-              class="font-poppins text-base leading-relaxed text-gray-700 lg:text-lg"
-            >
+            <p class="font-poppins text-base text-gray-700 lg:text-lg">
               Explore how you can increase Occupancy at Lower Cost Than You
               Think
             </p>
@@ -89,8 +89,14 @@ import Button from "../button.astro";
               </Button>
             </div>
           </div>
+
+          <Image
+            src={blueBgShapes}
+            alt="Blue background shapes"
+            class="absolute -bottom-[300px] left-0 min-w-[350px] -rotate-90 opacity-50 sm:-bottom-[105%] sm:w-full lg:-bottom-[70%]"
+          />
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

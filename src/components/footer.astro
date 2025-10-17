@@ -6,20 +6,22 @@ import phoneIcon from "@/assets/icons/phone.svg";
 import markerIcon from "@/assets/icons/marker.svg";
 ---
 
-<footer class="bg-white pb-16">
+<footer class="bg-white pb-10 sm:pb-16">
   <div class="container mx-auto px-4">
     <!-- First Part of Footer -->
-    <div class="mb-8 rounded-md border border-gray-300 bg-white p-8">
+    <div
+      class="mb-6 rounded-[10px] border border-gray-300 bg-white p-6 sm:mb-8 sm:p-10"
+    >
       <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
         <!-- Left Content Area -->
         <div class="space-y-6">
           <!-- Logo -->
-          <div class="w-24 lg:w-30 xl:w-full">
+          <div class="w-20 sm:w-24 md:w-[130px] lg:w-[150px]">
             <Image src={logo} alt="logo" />
           </div>
 
           <!-- Description Text -->
-          <p class="leading-relaxed text-gray-700">
+          <p class="leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua
             exercitation.
@@ -27,9 +29,13 @@ import markerIcon from "@/assets/icons/marker.svg";
         </div>
 
         <!-- Right Content Area -->
-        <div class="space-y-6">
+        <div class="space-y-4">
           <!-- Heading -->
-          <h3 class="text-primary text-xl font-bold uppercase">GET IN TOUCH</h3>
+          <h3
+            class="text-primary text-xl! font-bold uppercase sm:text-2xl! lg:text-[32px]!"
+          >
+            GET IN TOUCH
+          </h3>
 
           <!-- Separator Line -->
           <div class="border-t border-gray-300"></div>
@@ -38,38 +44,39 @@ import markerIcon from "@/assets/icons/marker.svg";
           <div class="space-y-4">
             <!-- Email -->
             <div class="flex items-center space-x-3">
-              <div class="w-5wmd:-6 flex items-center justify-center">
+              <div class="flex w-5 items-center justify-center">
                 <Image
                   src={envelopeIcon}
                   alt="Email"
                   class="h-full w-full object-contain"
                 />
               </div>
-              <span class="text-gray-700">office@seniorlead.com</span>
+              <span class="text-dark-gray">office@seniorlead.com</span>
             </div>
 
             <!-- Phone -->
             <div class="flex items-center space-x-3">
-              <div class="flex w-5 items-center justify-center md:w-6">
+              <div class="flex w-5 items-center justify-center">
                 <Image
                   src={phoneIcon}
                   alt="Phone"
                   class="h-full w-full object-contain"
                 />
               </div>
-              <span class="text-gray-700">+584/248-258</span>
+              <span class="text-dark-gray">+584/248-258</span>
             </div>
 
             <!-- Location -->
             <div class="flex items-center space-x-3">
-              <div class="flex w-5 items-center justify-center md:w-6">
+              <div class="flex w-5 items-center justify-center">
                 <Image
                   src={markerIcon}
                   alt="Location"
                   class="h-full w-full object-contain"
                 />
               </div>
-              <span class="text-gray-700">441 Leo Street, Denver, Colorado</span
+              <span class="text-dark-gray"
+                >441 Leo Street, Denver, Colorado</span
               >
             </div>
           </div>
@@ -78,13 +85,17 @@ import markerIcon from "@/assets/icons/marker.svg";
     </div>
 
     <!-- Second Part of Footer -->
-    <div class="rounded-md border border-gray-300 bg-[#FAFAFA] p-6">
+    <div
+      class="rounded-[10px] border border-gray-300 bg-[#FAFAFA] px-6 py-5 sm:px-10 sm:py-8"
+    >
       <div
         class="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0"
       >
         <!-- Left Content Area -->
         <div class="text-center md:text-left">
-          <p class="text-primary text-sm">
+          <p
+            class="text-primary! text-sm! font-medium sm:text-base! lg:text-xl!"
+          >
             Copyright © 2025 SeniorLead. All rights reserved.
           </p>
         </div>
@@ -93,19 +104,19 @@ import markerIcon from "@/assets/icons/marker.svg";
         <div class="flex space-x-6">
           <a
             href="#"
-            class="hover:text-primary text-gray-700 transition-colors duration-300"
+            class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
           >
             Legal
           </a>
           <a
             href="#"
-            class="hover:text-primary text-gray-700 transition-colors duration-300"
+            class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
           >
             Privacy Policy
           </a>
           <a
             href="#"
-            class="hover:text-primary text-gray-700 transition-colors duration-300"
+            class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
           >
             Terms of Use
           </a>

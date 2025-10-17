@@ -4,6 +4,9 @@
 
 @theme {
   --color-primary: #2b76fe;
+  --color-primary-light: #f4f8ff;
+
+  --color-dark-gray: #23201d;
 
   --color-border-gray: #ebebeb;
 
@@ -16,17 +19,17 @@
 }
 
 body {
-  @apply font-sofia-sans-condensed relative;
+  @apply font-poppins text-dark-gray relative;
 }
 
 p {
-  @apply font-poppins text-xs sm:text-sm md:text-base xl:text-lg;
+  @apply text-dark-gray text-xs sm:text-sm md:text-base;
 }
 
 span,
 li,
 a {
-  @apply font-poppins text-xs sm:text-sm md:text-base xl:text-lg;
+  @apply text-xs sm:text-sm md:text-base;
 }
 
 /* Custom styles for the hero layout */
@@ -44,17 +47,38 @@ h1,
 h2,
 h3 {
   text-rendering: optimizeLegibility;
+  @apply font-sofia-sans-condensed leading-none font-black;
+}
+
+h1 {
+  @apply text-3xl md:text-4xl lg:text-5xl;
 }
 
 h2 {
-  @apply font-sofia-sans-condensed text-3xl leading-tight font-extrabold uppercase lg:text-5xl xl:text-5xl;
+  @apply text-3xl uppercase md:text-4xl lg:text-[45px];
 }
 
 h3 {
-  @apply text-2xl leading-tight font-bold lg:text-3xl xl:text-4xl;
+  @apply text-2xl lg:text-3xl xl:text-4xl;
+}
+
+h4 {
+  @apply font-sofia-sans-condensed text-2xl font-bold uppercase;
 }
 
 /* Custom shadow for consultation box */
 .shadow-xl {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.how-it-works-number {
+  @apply text-primary font-sofia-sans-condensed text-4xl font-bold;
+}
+
+.section {
+  @apply py-20 lg:py-32;
+}
+
+.how-it-works-mobile-step {
+  @apply mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-white sm:h-16 sm:w-16;
 }

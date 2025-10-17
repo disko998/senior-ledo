@@ -1,5 +1,9 @@
 ---
 import Button from "../button.astro";
+import Image from "astro/components/Image.astro";
+import caseStudyPlaceholder from "../../../public/images/home/case-study/case-study-card-placeholder.png";
+import growthIcon from "@/assets/icons/growth-arrow.svg";
+import { cn } from "@/utils/helper";
 
 export interface Props {
   icon: any;
@@ -29,69 +33,79 @@ const {
 ---
 
 <div
-  class={`bg-white rounded-md border border-border-gray p-4 md:p-6 ${className}`}
+  class={cn(
+    "bg-white rounded-[10px] border border-border-gray p-4 md:p-6",
+    className,
+  )}
 >
   <!-- Header Section -->
-  <div class="mb-6 flex items-center">
-    <div class="mr-4 flex h-12 w-12 items-center justify-center">
-      <img
-        src={icon.src || icon}
-        alt={title}
-        class="h-full w-full object-contain"
+  <div class="mb-6 flex items-center sm:mb-8">
+    <div
+      class="mr-4 flex h-[60px] w-[60px] items-center justify-center sm:h-[70px] sm:w-[70px]"
+    >
+      <Image
+        src={caseStudyPlaceholder}
+        alt="Case Study Placeholder"
+        class="rounded-full object-contain"
+        width={70}
+        height={70}
       />
     </div>
     <div>
-      <p class="text-lg font-extrabold text-gray-900 lg:text-3xl">{title}</p>
-      <p class="text-sm text-gray-600">{subtitle}</p>
+      <p
+        class="font-sofia-sans-condensed text-base! font-extrabold sm:text-xl! lg:text-2xl! xl:text-3xl!"
+      >
+        {title}
+      </p>
+      <p class="text-sm! text-gray-600">{subtitle}</p>
     </div>
   </div>
 
   <!-- Key Metric Display -->
-  <div class="mb-4 rounded-md bg-blue-50 px-4 py-3">
-    <div class="flex items-center">
-      <span class="text-primary text-3xl font-bold">{metric}</span>
-      <span class="text-primary ml-3 text-sm">{metricLabel}</span>
+  <div class="bg-primary-light mb-4 rounded-md px-4 py-3">
+    <div class="flex items-end">
+      <span
+        class="text-primary font-sofia-sans-condensed text-2xl! font-black sm:text-3xl! xl:text-5xl!"
+        >{metric}</span
+      >
+      <span class="text-primary mb-1.5 ml-3 text-xs! sm:text-sm! xl:text-base!"
+        >{metricLabel}</span
+      >
     </div>
   </div>
 
   <!-- Growth Indicator -->
   <div class="mb-4 flex items-center">
-    <svg
-      class="text-primary mr-2 h-4 w-4"
-      fill="currentColor"
-      viewBox="0 0 20 20"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
-        clip-rule="evenodd"></path>
-    </svg>
-    <span class="text-primary mr-2 text-sm font-semibold">{growth}</span>
-    <span class="text-sm text-gray-700">{growthDescription}</span>
+    <div class="bg-primary-light flex items-center p-2">
+      <Image src={growthIcon} alt="Growth Icon" width={24} height={24} />
+      <span class="text-primary ml-1 text-sm! sm:text-base!">{growth}</span>
+    </div>
+    <span class="ml-4 text-xs! sm:text-sm!">{growthDescription}</span>
   </div>
 
   <!-- Graph Section (Placeholder) -->
-  <div class="mb-4 rounded-md bg-gray-50 p-4">
-    <div class="flex h-20 items-end justify-between space-x-1">
+  <div class="bg-primary-light mb-4 rounded-md p-4">
+    <div class="flex h-48 items-end justify-between space-x-1">
       <!-- Bar Chart Placeholder -->
-      <div class="bg-primary h-8 w-4 rounded-t"></div>
-      <div class="bg-primary h-12 w-4 rounded-t"></div>
-      <div class="bg-primary h-16 w-4 rounded-t"></div>
-      <div class="bg-primary h-20 w-4 rounded-t"></div>
-      <div class="bg-primary h-14 w-4 rounded-t"></div>
-      <div class="bg-primary h-18 w-4 rounded-t"></div>
-      <div class="bg-primary h-22 w-4 rounded-t"></div>
-      <div class="bg-primary h-24 w-4 rounded-t"></div>
+      <div class="h-18 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-22 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-26 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-30 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-24 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-28 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-32 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-34 w-8 rounded-t bg-[#2B76FE54]"></div>
+      <div class="h-38 w-8 rounded-t bg-[#2B76FE54]"></div>
     </div>
   </div>
 
   <!-- Description Text -->
-  <p class="mb-6 text-sm leading-relaxed text-gray-700">
+  <p class="my-6 text-sm! leading-relaxed text-gray-700">
     {description}
   </p>
 
   <!-- Call to Action Button -->
-  <Button variant="secondary" size="lg" fullWidth>
+  <Button variant="secondary" size="xl" fullWidth>
     {buttonText}
   </Button>
 </div>

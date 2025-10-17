@@ -1,16 +1,18 @@
 ---
-import FaqDropdown from "../faq-dropdown.astro";
+import FaqDropdown from "@/components/faq-dropdown.astro";
 ---
 
-<section class="bg-white py-16 lg:py-24">
+<section class="bg-white pb-20 lg:pb-32">
   <div class="container mx-auto px-4">
     <h2 class="text-primary font-bold uppercase">Frequently Asked Questions</h2>
 
-    <p class="mt-8 mb-4 font-semibold lg:text-2xl!">
+    <p
+      class="mt-6 mb-4 text-base! font-semibold sm:mt-8 sm:text-lg! lg:text-[22px]!"
+    >
       Have questions about how we can help your senior living facility grow?
     </p>
 
-    <p class="lg:text-base!">
+    <p class="max-w-[1000px] lg:text-base!">
       We've compiled answers to the most common questions about our lead
       generation and marketing services. <span class="font-bold"
         >If you don't find what you're looking for, feel free to reach out—we're
@@ -19,7 +21,7 @@ import FaqDropdown from "../faq-dropdown.astro";
     </p>
 
     <!-- FAQ Items -->
-    <div class="mt-12">
+    <div class="mt-8 lg:mt-12">
       <FaqDropdown
         number={1}
         question="WHAT SERVICES DOES YOUR AGENCY PROVIDE?"
@@ -36,7 +38,7 @@ import FaqDropdown from "../faq-dropdown.astro";
         number={3}
         question="WHAT MAKES YOUR SERVICES DIFFERENT FROM OTHER MARKETING AGENCIES?"
         answer={`<p>Our services are tailored specifically for senior living facilities. We offer:</p>
-        <ul class="list-disc list-inside mt-6">
+        <ul class="list-disc list-inside mt-6 ml-4">
           <li>Guaranteed exclusivity: We work with only one facility per area.</li>
           <li>Cost-effective solutions: Our packages are designed to generate results at a lower cost than placing one resident.</li>
           <li>Proven success: Our clients consistently see a steady increase in occupancy.</li>
@@ -47,7 +49,7 @@ import FaqDropdown from "../faq-dropdown.astro";
         number={4}
         question="WHAT DOES THE SOCIAL MEDIA MANAGEMENT PACKAGE INCLUDE?"
         answer={`<p>Our social media management package covers:</p>
-        <ul class="list-disc list-inside mt-6">
+        <ul class="list-disc list-inside mt-6 ml-4">
           <li>Creating and managing posts across platforms like Facebook, Instagram, and LinkedIn.</li>
           <li>Custom content tailored to your facility's brand and audience.</li>
           <li>Monthly performance reports to track engagement and growth.</li>

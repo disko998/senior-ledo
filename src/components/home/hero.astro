@@ -2,12 +2,18 @@
 import Button from "../button.astro";
 import Image from "astro/components/Image.astro";
 import blueBgShapes from "../../../public/images/home/blue-bg-shapes.png";
+import heroBg from "../../../public/images/home/hero-bg.jpg";
 ---
 
-<section
-  class="relative min-h-screen w-full bg-[url('../../../public/images/home/hero-bg.jpg')] bg-cover bg-center bg-no-repeat bg-blend-darken"
->
-  <div class="bg-primary/90 absolute top-0 left-0 h-full w-full"></div>
+<section class="relative min-h-screen w-full">
+  <div class="absolute top-0 left-0 h-full w-full">
+    <div class="bg-primary/90 absolute top-0 left-0 h-full w-full"></div>
+    <Image
+      src={heroBg}
+      alt="Hero background"
+      class="h-full w-full object-cover"
+    />
+  </div>
 
   <!-- Main Content Container -->
   <div

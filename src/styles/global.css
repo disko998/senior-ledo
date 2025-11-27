@@ -18,6 +18,10 @@
   @apply mx-auto max-w-[1500px] px-4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply font-poppins text-dark-gray relative;
 }

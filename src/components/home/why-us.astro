@@ -1,148 +1,62 @@
 ---
-import WhatSetUsApartCard from "../cards/what-set-us-apart-card.astro";
-import CaseStudyCard from "../cards/case-study-card.astro";
-import Button from "../button.astro";
-import Image from "astro/components/Image.astro";
-import handShakingIcon from "@/assets/icons/hand-shaking.svg";
-import handWithGraphIcon from "@/assets/icons/hand-with-graph.svg";
-import trophyIcon from "@/assets/icons/trophy.svg";
-import consultationImage from "../../../public/images/home/why-us/old-people-having-lounch.jpg";
+import WhatSetUsApartCard from '../cards/what-set-us-apart-card.astro';
+import handShakingIcon from '@/assets/icons/hand-shaking.svg';
+import handWithGraphIcon from '@/assets/icons/hand-with-graph.svg';
+import trophyIcon from '@/assets/icons/trophy.svg';
 ---
 
-<section class="section bg-white">
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl">
-      <!-- Top Heading -->
-      <h4 class="uppercase">TRUST AND DIFFERENTIATION</h4>
+<section id='why-us' class='section bg-white'>
+    <div class='container mx-auto px-4'>
+        <div class='max-w-4xl'>
+            <!-- Top Heading -->
+            <h4 class='uppercase'>TRUST AND DIFFERENTIATION</h4>
 
-      <!-- Main Subheading -->
-      <h2 class="text-primary mt-2.5 mb-4">WHY US</h2>
+            <!-- Main Subheading -->
+            <h2 class='text-primary mt-2.5 mb-4'>WHY US</h2>
 
-      <!-- Paragraph -->
-      <p class="max-w-[1000px] text-left leading-relaxed">
-        At SeniorLead, we have years of experience working with senior living
-        facilities to help them grow. Our dedicated approach and exclusive
-        targeting give us the edge in filling vacancies faster and more
-        efficiently.
-      </p>
+            <!-- Paragraph -->
+            <p class='max-w-[1000px] text-left leading-relaxed'>
+                At SeniorLead, we have years of experience working with senior
+                living facilities to help them grow. Our dedicated approach and
+                exclusive targeting give us the edge in filling vacancies faster
+                and more efficiently.
+            </p>
+        </div>
+
+        <!-- What Sets Us Apart Section -->
+        <div class='mx-auto mt-12 sm:mt-16'>
+            <!-- Section Title -->
+            <h3
+                class='text-dark-gray mb-6 text-left text-2xl font-bold uppercase sm:mb-8'
+            >
+                WHAT SETS US APART:
+            </h3>
+
+            <!-- Cards Grid -->
+            <div
+                class='grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3'
+            >
+                <!-- Card 1: Guaranteed Exclusivity -->
+                <WhatSetUsApartCard
+                    icon={handShakingIcon}
+                    title='Guaranteed Exclusivity'
+                    description='We work with only one facility per area to ensure you get our full attention.'
+                />
+
+                <!-- Card 2: Cost-Effective -->
+                <WhatSetUsApartCard
+                    icon={handWithGraphIcon}
+                    title='Cost-Effective'
+                    description="Our strategies are designed to cost less than what you'd pay to place a single new resident."
+                />
+
+                <!-- Card 3: Proven Results -->
+                <WhatSetUsApartCard
+                    icon={trophyIcon}
+                    title='Proven Results'
+                    description='Our clients consistently see increased occupancy and improved ROI on their marketing spend.'
+                />
+            </div>
+        </div>
     </div>
-
-    <!-- What Sets Us Apart Section -->
-    <div class="mx-auto mt-12 sm:mt-16">
-      <!-- Section Title -->
-      <h3
-        class="text-dark-gray mb-6 text-left text-2xl font-bold uppercase sm:mb-8"
-      >
-        WHAT SETS US APART:
-      </h3>
-
-      <!-- Cards Grid -->
-      <div
-        class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3"
-      >
-        <!-- Card 1: Guaranteed Exclusivity -->
-        <WhatSetUsApartCard
-          icon={handShakingIcon}
-          title="Guaranteed Exclusivity"
-          description="We work with only one facility per area to ensure you get our full attention."
-        />
-
-        <!-- Card 2: Cost-Effective -->
-        <WhatSetUsApartCard
-          icon={handWithGraphIcon}
-          title="Cost-Effective"
-          description="Our strategies are designed to cost less than what you'd pay to place a single new resident."
-        />
-
-        <!-- Card 3: Proven Results -->
-        <WhatSetUsApartCard
-          icon={trophyIcon}
-          title="Proven Results"
-          description="Our clients consistently see increased occupancy and improved ROI on their marketing spend."
-        />
-      </div>
-    </div>
-
-    <div class="mt-16 space-y-4 lg:mt-32">
-      <h2 class="text-primary">Case Study / Results</h2>
-      <p>
-        Don't just take our word for it—see the results we've delivered for
-        other senior living facilities.
-      </p>
-    </div>
-
-    <!-- Case Study Cards -->
-    <div
-      class="mt-6 grid grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-3"
-    >
-      <!-- Case Study Card 1 -->
-      <CaseStudyCard
-        icon={handShakingIcon}
-        title="Sunrise Senior Living"
-        subtitle="Assisted Living Facility"
-        metric="10,546"
-        metricLabel="Clicks per month"
-        growth="+12.5%"
-        growthDescription="increase in qualified leads"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-      />
-
-      <!-- Case Study Card 2 -->
-      <CaseStudyCard
-        icon={handWithGraphIcon}
-        title="Brookdale Senior Living"
-        subtitle="Memory Care Community"
-        metric="8,234"
-        metricLabel="Clicks per month"
-        growth="+18.3%"
-        growthDescription="increase in occupancy rate"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-      />
-
-      <!-- Case Study Card 3 -->
-      <CaseStudyCard
-        icon={trophyIcon}
-        title="Five Star Senior Living"
-        subtitle="Independent Living"
-        metric="12,891"
-        metricLabel="Clicks per month"
-        growth="+15.7%"
-        growthDescription="increase in ROI"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-      />
-    </div>
-
-    <!-- Consultation Section -->
-    <div
-      class="mt-20 grid grid-cols-1 items-center gap-10 sm:gap-14 lg:mt-32 lg:grid-cols-2"
-    >
-      <!-- Left Side - Image -->
-      <div class="order-2 lg:order-1">
-        <Image
-          src={consultationImage}
-          alt="Elderly people having lunch together in a care facility"
-          class="h-auto w-full rounded-lg object-cover"
-          loading="lazy"
-        />
-      </div>
-
-      <!-- Right Side - Text Content -->
-      <div class="order-1 lg:order-2">
-        <h2 class="text-primary text-2xl font-bold uppercase lg:text-3xl">
-          LET'S DISCUSS HOW WE CAN HELP YOU GET STARTED.
-        </h2>
-
-        <p
-          class="mt-4 mb-6 leading-relaxed sm:mt-6 sm:mb-8 sm:text-base! md:text-xl! xl:text-2xl!"
-        >
-          Schedule a free consultation to see how we can specifically help your
-          facility.
-        </p>
-
-        <Button variant="primary" size="xl">
-          SCHEDULE MY FREE CONSULTATION
-        </Button>
-      </div>
-    </div>
-  </div>
 </section>

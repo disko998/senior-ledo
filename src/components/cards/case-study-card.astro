@@ -1,111 +1,140 @@
 ---
-import Button from "../button.astro";
-import Image from "astro/components/Image.astro";
-import caseStudyPlaceholder from "../../../public/images/home/case-study/case-study-card-placeholder.png";
-import growthIcon from "@/assets/icons/growth-arrow.svg";
-import { cn } from "@/utils/helper";
+import Button from '../button.astro';
+import Image from 'astro/components/Image.astro';
+import caseStudyPlaceholder from '../../../public/images/home/case-study/case-study-card-placeholder.png';
+import growthIcon from '@/assets/icons/growth-arrow.svg';
+import { cn } from '@/utils/helper';
 
 export interface Props {
-  icon: any;
-  title: string;
-  subtitle: string;
-  metric: string;
-  metricLabel: string;
-  growth: string;
-  growthDescription: string;
-  description: string;
-  buttonText?: string;
-  class?: string;
+    icon: any;
+    title: string;
+    subtitle: string;
+    metric: string;
+    metricLabel: string;
+    growth: string;
+    growthDescription: string;
+    description: string;
+    buttonText?: string;
+    href?: string;
+    graphImage?: any;
+    class?: string;
 }
 
 const {
-  icon,
-  title,
-  subtitle,
-  metric,
-  metricLabel,
-  growth,
-  growthDescription,
-  description,
-  buttonText = "VIEW CASE STUDY",
-  class: className = "",
+    icon,
+    title,
+    subtitle,
+    metric,
+    metricLabel,
+    growth,
+    growthDescription,
+    description,
+    buttonText = 'VIEW CASE STUDY',
+    href,
+    graphImage,
+    class: className = '',
 } = Astro.props;
 ---
 
 <div
-  class={cn(
-    "bg-white rounded-[10px] border border-border-gray p-4 md:p-6",
-    className,
-  )}
+    class={cn(
+        'bg-white rounded-[10px] border border-border-gray p-4 md:p-6',
+        className,
+    )}
 >
-  <!-- Header Section -->
-  <div class="mb-6 flex items-center sm:mb-8">
-    <div
-      class="mr-4 flex h-[60px] w-[60px] items-center justify-center sm:h-[70px] sm:w-[70px]"
-    >
-      <Image
-        src={caseStudyPlaceholder}
-        alt="Case Study Placeholder"
-        class="rounded-full object-contain"
-        width={70}
-        height={70}
-      />
+    <!-- Header Section -->
+    <div class='mb-6 flex items-center sm:mb-8 h-[84px]'>
+        <div
+            class='mr-4 flex h-[60px] w-[60px] items-center justify-center sm:h-[70px] sm:w-[70px]'
+        >
+            <Image
+                src={caseStudyPlaceholder}
+                alt='Case Study Placeholder'
+                class='rounded-full object-contain'
+                width={70}
+                height={70}
+            />
+        </div>
+        <div>
+            <p
+                class='font-sofia-sans-condensed text-base! font-extrabold sm:text-xl! lg:text-2xl! xl:text-3xl!'
+            >
+                {title}
+            </p>
+            <p class='text-sm! text-gray-600'>{subtitle}</p>
+        </div>
     </div>
-    <div>
-      <p
-        class="font-sofia-sans-condensed text-base! font-extrabold sm:text-xl! lg:text-2xl! xl:text-3xl!"
-      >
-        {title}
-      </p>
-      <p class="text-sm! text-gray-600">{subtitle}</p>
+
+    <!-- Key Metric Display -->
+    <div class='bg-primary-light mb-4 rounded-md px-4 py-3'>
+        <div class='flex items-end'>
+            <span
+                class='text-primary font-sofia-sans-condensed text-2xl! font-black sm:text-3xl! xl:text-5xl!'
+                >{metric}</span
+            >
+            <span
+                class='text-primary mb-1.5 ml-3 text-xs! sm:text-sm! xl:text-base!'
+                >{metricLabel}</span
+            >
+        </div>
     </div>
-  </div>
 
-  <!-- Key Metric Display -->
-  <div class="bg-primary-light mb-4 rounded-md px-4 py-3">
-    <div class="flex items-end">
-      <span
-        class="text-primary font-sofia-sans-condensed text-2xl! font-black sm:text-3xl! xl:text-5xl!"
-        >{metric}</span
-      >
-      <span class="text-primary mb-1.5 ml-3 text-xs! sm:text-sm! xl:text-base!"
-        >{metricLabel}</span
-      >
+    <!-- Growth Indicator -->
+    <div class='mb-4 flex items-center'>
+        <div class='bg-primary-light flex items-center p-2'>
+            <Image src={growthIcon} alt='Growth Icon' width={24} height={24} />
+            <span class='text-primary ml-1 text-sm! sm:text-base!'
+                >{growth}</span
+            >
+        </div>
+        <span class='ml-4 text-xs! sm:text-sm!'>{growthDescription}</span>
     </div>
-  </div>
 
-  <!-- Growth Indicator -->
-  <div class="mb-4 flex items-center">
-    <div class="bg-primary-light flex items-center p-2">
-      <Image src={growthIcon} alt="Growth Icon" width={24} height={24} />
-      <span class="text-primary ml-1 text-sm! sm:text-base!">{growth}</span>
+    <!-- Graph Section -->
+    <div class='bg-primary-light mb-4 rounded-md p-4'>
+        {
+            graphImage ? (
+                <Image
+                    src={graphImage}
+                    alt='Performance Graph'
+                    class='h-48 w-full object-contain'
+                />
+            ) : (
+                <div class='flex h-48 items-end justify-between space-x-1'>
+                    <!-- Bar Chart Placeholder -->
+                    <div class='h-18 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-22 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-26 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-30 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-24 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-28 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-32 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-34 w-8 rounded-t bg-[#2B76FE54]'></div>
+                    <div class='h-38 w-8 rounded-t bg-[#2B76FE54]'></div>
+                </div>
+            )
+        }
     </div>
-    <span class="ml-4 text-xs! sm:text-sm!">{growthDescription}</span>
-  </div>
 
-  <!-- Graph Section (Placeholder) -->
-  <div class="bg-primary-light mb-4 rounded-md p-4">
-    <div class="flex h-48 items-end justify-between space-x-1">
-      <!-- Bar Chart Placeholder -->
-      <div class="h-18 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-22 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-26 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-30 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-24 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-28 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-32 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-34 w-8 rounded-t bg-[#2B76FE54]"></div>
-      <div class="h-38 w-8 rounded-t bg-[#2B76FE54]"></div>
-    </div>
-  </div>
+    <!-- Description Text -->
+    <p class='my-6 text-sm! leading-relaxed text-gray-700'>
+        {description}
+    </p>
 
-  <!-- Description Text -->
-  <p class="my-6 text-sm! leading-relaxed text-gray-700">
-    {description}
-  </p>
-
-  <!-- Call to Action Button -->
-  <Button variant="secondary" size="xl" fullWidth>
-    {buttonText}
-  </Button>
+    <!-- Call to Action Button -->
+    {
+        href ? (
+            <a
+                href={href}
+                target='_blank'
+                class='font-sofia-sans-condensed text-primary border-primary hover:bg-primary block w-full cursor-pointer rounded-lg border-2 bg-white px-8 py-4 text-center text-lg leading-none font-extrabold uppercase transition-all duration-300 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:outline-none md:px-10 lg:py-5 lg:text-xl'
+            >
+                {buttonText}
+            </a>
+        ) : (
+            <Button variant='secondary' size='xl' fullWidth>
+                {buttonText}
+            </Button>
+        )
+    }
 </div>

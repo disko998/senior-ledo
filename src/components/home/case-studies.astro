@@ -1,0 +1,63 @@
+---
+import CaseStudyCard from '../cards/case-study-card.astro';
+import occupancyGraph from '../../../public/occupancy_graph.svg';
+import memoryCareCalls from '../../../public/memory_care_monthly_calls.svg';
+import handWithGraphIcon from '@/assets/icons/hand-with-graph.svg';
+import trophyIcon from '@/assets/icons/trophy.svg';
+---
+
+<section id='case-studies' class='section bg-white'>
+    <div class='container mx-auto px-4'>
+        <div class='space-y-4'>
+            <h2 class='text-primary'>Case Study / Results</h2>
+            <p>
+                Don't just take our word for it—see the results we've delivered
+                for other senior living facilities.
+            </p>
+        </div>
+
+        <!-- Case Study Cards -->
+        <div
+            class='mt-6 grid grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-3'
+        >
+            <!-- Case Study Card 1 -->
+            <CaseStudyCard
+                icon={occupancyGraph}
+                title='Care Home – Greater Manchester'
+                subtitle='Assisted Living & Dementia Care Facility'
+                metric='16%'
+                metricLabel='Occupancy Increase'
+                growth='-53%'
+                growthDescription='cost-per-inquiry reduction (£158 → £74)'
+                description='In just 90 days, a 70-bed care home improved visibility, doubled inquiries (58 → 131), and achieved 10 new move-ins through optimized Google Business Profile, targeted search ads, and trust-building content.'
+                href='https://drive.google.com/file/d/1FTtV2ReRYZ4yiTPIwEku21w1Qfzk1gGc/view?usp=sharing'
+            />
+
+            <!-- Case Study Card 2 -->
+            <CaseStudyCard
+                icon={handWithGraphIcon}
+                title='Memory Care Community – Pennsylvania'
+                subtitle='Specialized Memory Care Facility'
+                metric='12%'
+                metricLabel='Occupancy Increase'
+                growth='127%'
+                growthDescription='increase in landing page conversions (4.1% → 9.3%)'
+                description='A five-month marketing intervention improved search visibility, boosted GBP calls (39 → 112), increased conversion rates, and generated 9 new residents through precise Google Ads, retargeting, and optimized follow-up.'
+                href='https://drive.google.com/file/d/1gk0kVg-6hdJ871KhkKhoObI6iOfUEuML/view?usp=sharing'
+            />
+
+            <!-- Case Study Card 3 -->
+            <CaseStudyCard
+                icon={trophyIcon}
+                title='Senior Home – Serbia'
+                subtitle='Residential Senior Care Facility'
+                metric='13%'
+                metricLabel='Occupancy Increase'
+                growth='57%'
+                growthDescription='lower cost per inquiry (2,800 RSD → 1,200 RSD)'
+                description='Local search optimization, GBP refresh, one-tap communication, and retargeting led to a 240% increase in Google Maps views, 204% more calls, and 8 new residents—all achieved within four months.'
+                href='https://drive.google.com/file/d/1wkVE6ToXt1mophiwkC0W_lKe3L3u5fzo/view?usp=sharing'
+            />
+        </div>
+    </div>
+</section>

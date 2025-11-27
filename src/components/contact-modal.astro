@@ -1,0 +1,440 @@
+---
+// Contact Modal Component
+---
+
+<div
+    id='contact-modal'
+    class='fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4'
+>
+    <div
+        class='relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white shadow-2xl'
+    >
+        <!-- Close Button -->
+        <button
+            id='close-modal'
+            class='absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600'
+            aria-label='Close modal'
+        >
+            <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-5 w-5'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+            >
+                <path
+                    fill-rule='evenodd'
+                    d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
+                    clip-rule='evenodd'></path>
+            </svg>
+        </button>
+
+        <!-- Modal Content -->
+        <div class='p-6 sm:p-8'>
+            <!-- Header -->
+            <div class='mb-6'>
+                <h2
+                    class='text-primary mb-2 text-2xl font-bold uppercase sm:text-3xl'
+                >
+                    Schedule Your Free Consultation
+                </h2>
+                <p class='text-gray-600'>
+                    Fill out the form below and we'll get back to you within 24
+                    hours.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form id='contact-form' class='space-y-4'>
+                <!-- First Name & Last Name -->
+                <div class='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+                    <div>
+                        <label
+                            for='firstName'
+                            class='mb-1 block text-sm font-medium text-gray-700'
+                        >
+                            First Name <span class='text-red-500'>*</span>
+                        </label>
+                        <input
+                            type='text'
+                            id='firstName'
+                            name='firstName'
+                            required
+                            class='focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-gray-300 px-4 py-2.5 transition-colors focus:ring-2 focus:outline-none'
+                            placeholder='John'
+                        />
+                        <p
+                            class='mt-1 hidden text-sm text-red-600'
+                            data-error='firstName'
+                        >
+                        </p>
+                    </div>
+                    <div>
+                        <label
+                            for='lastName'
+                            class='mb-1 block text-sm font-medium text-gray-700'
+                        >
+                            Last Name <span class='text-red-500'>*</span>
+                        </label>
+                        <input
+                            type='text'
+                            id='lastName'
+                            name='lastName'
+                            required
+                            class='focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-gray-300 px-4 py-2.5 transition-colors focus:ring-2 focus:outline-none'
+                            placeholder='Doe'
+                        />
+                        <p
+                            class='mt-1 hidden text-sm text-red-600'
+                            data-error='lastName'
+                        >
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label
+                        for='email'
+                        class='mb-1 block text-sm font-medium text-gray-700'
+                    >
+                        Email <span class='text-red-500'>*</span>
+                    </label>
+                    <input
+                        type='email'
+                        id='email'
+                        name='email'
+                        required
+                        class='focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-gray-300 px-4 py-2.5 transition-colors focus:ring-2 focus:outline-none'
+                        placeholder='john.doe@example.com'
+                    />
+                    <p
+                        class='mt-1 hidden text-sm text-red-600'
+                        data-error='email'
+                    >
+                    </p>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <label
+                        for='phone'
+                        class='mb-1 block text-sm font-medium text-gray-700'
+                    >
+                        Phone <span class='text-red-500'>*</span>
+                    </label>
+                    <input
+                        type='tel'
+                        id='phone'
+                        name='phone'
+                        required
+                        class='focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-gray-300 px-4 py-2.5 transition-colors focus:ring-2 focus:outline-none'
+                        placeholder='(555) 123-4567'
+                    />
+                    <p
+                        class='mt-1 hidden text-sm text-red-600'
+                        data-error='phone'
+                    >
+                    </p>
+                </div>
+
+                <!-- Company Name -->
+                <div>
+                    <label
+                        for='companyName'
+                        class='mb-1 block text-sm font-medium text-gray-700'
+                    >
+                        Company Name <span class='text-red-500'>*</span>
+                    </label>
+                    <input
+                        type='text'
+                        id='companyName'
+                        name='companyName'
+                        required
+                        class='focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-gray-300 px-4 py-2.5 transition-colors focus:ring-2 focus:outline-none'
+                        placeholder='Your Facility Name'
+                    />
+                    <p
+                        class='mt-1 hidden text-sm text-red-600'
+                        data-error='companyName'
+                    >
+                    </p>
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <label
+                        for='message'
+                        class='mb-1 block text-sm font-medium text-gray-700'
+                    >
+                        Message
+                    </label>
+                    <textarea
+                        id='message'
+                        name='message'
+                        rows='4'
+                        class='focus:border-primary focus:ring-primary/20 w-full rounded-lg border border-gray-300 px-4 py-2.5 transition-colors focus:ring-2 focus:outline-none'
+                        placeholder='Tell us about your facility and when are you available for a consultation...'
+                    ></textarea>
+                    <p
+                        class='mt-1 hidden text-sm text-red-600'
+                        data-error='message'
+                    >
+                    </p>
+                </div>
+
+                <!-- Success Message -->
+                <div
+                    id='success-message'
+                    class='hidden rounded-lg bg-green-50 p-4 text-green-800'
+                >
+                    <p class='font-medium'>Thank you for your submission!</p>
+                    <p class='text-sm'>We'll be in touch with you shortly.</p>
+                </div>
+
+                <!-- Error Message -->
+                <div
+                    id='error-message'
+                    class='hidden rounded-lg bg-red-50 p-4 text-red-800'
+                >
+                    <p class='font-medium'>Something went wrong!</p>
+                    <p class='text-sm'>Please try again later.</p>
+                </div>
+
+                <!-- Submit Button -->
+                <div class='pt-2'>
+                    <button
+                        type='submit'
+                        id='submit-btn'
+                        class='bg-primary hover:bg-primary/90 w-full rounded-lg px-6 py-3 font-bold text-white transition-colors disabled:cursor-not-allowed disabled:opacity-50'
+                    >
+                        <span id='submit-text'>SUBMIT</span>
+                        <span id='submit-loading' class='hidden'>
+                            <svg
+                                class='inline h-5 w-5 animate-spin text-white'
+                                xmlns='http://www.w3.org/2000/svg'
+                                fill='none'
+                                viewBox='0 0 24 24'
+                            >
+                                <circle
+                                    class='opacity-25'
+                                    cx='12'
+                                    cy='12'
+                                    r='10'
+                                    stroke='currentColor'
+                                    stroke-width='4'></circle>
+                                <path
+                                    class='opacity-75'
+                                    fill='currentColor'
+                                    d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+                                ></path>
+                            </svg>
+                            Processing...
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Modal functionality
+    const modal = document.getElementById('contact-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const submitBtn = document.getElementById(
+        'submit-btn',
+    ) as HTMLButtonElement;
+    const submitText = document.getElementById('submit-text');
+    const submitLoading = document.getElementById('submit-loading');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    // Open modal function
+    function openModal() {
+        modal?.classList.remove('hidden');
+        modal?.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal function
+    function closeModal() {
+        modal?.classList.add('hidden');
+        modal?.classList.remove('flex');
+        document.body.style.overflow = '';
+        form?.reset();
+        clearErrors();
+        successMessage?.classList.add('hidden');
+        errorMessage?.classList.add('hidden');
+    }
+
+    // Add event listeners for modal triggers
+    document.addEventListener('DOMContentLoaded', () => {
+        // Listen for modal open events
+        document.addEventListener('openContactModal', openModal);
+
+        // Close button
+        closeModalBtn?.addEventListener('click', closeModal);
+
+        // Click outside to close
+        modal?.addEventListener('click', e => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Escape key to close
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    });
+
+    // Validation functions
+    function validateEmail(email: string): boolean {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    function validatePhone(phone: string): boolean {
+        const re = /^[\d\s\-\(\)]+$/;
+        return re.test(phone) && phone.replace(/\D/g, '').length >= 10;
+    }
+
+    function showError(fieldName: string, message: string) {
+        const errorElement = document.querySelector(
+            `[data-error="${fieldName}"]`,
+        );
+        const inputElement = document.getElementById(
+            fieldName,
+        ) as HTMLInputElement;
+
+        if (errorElement && inputElement) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+            inputElement.classList.add('border-red-500');
+        }
+    }
+
+    function clearError(fieldName: string) {
+        const errorElement = document.querySelector(
+            `[data-error="${fieldName}"]`,
+        );
+        const inputElement = document.getElementById(
+            fieldName,
+        ) as HTMLInputElement;
+
+        if (errorElement && inputElement) {
+            errorElement.classList.add('hidden');
+            inputElement.classList.remove('border-red-500');
+        }
+    }
+
+    function clearErrors() {
+        const errorElements = document.querySelectorAll('[data-error]');
+        errorElements.forEach(el => el.classList.add('hidden'));
+
+        const inputs = form?.querySelectorAll('input, textarea');
+        inputs?.forEach(input => input.classList.remove('border-red-500'));
+    }
+
+    // Form submission
+    form?.addEventListener('submit', async e => {
+        e.preventDefault();
+        clearErrors();
+        successMessage?.classList.add('hidden');
+        errorMessage?.classList.add('hidden');
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        // Validation
+        let hasErrors = false;
+
+        if (!data.firstName || (data.firstName as string).trim().length < 2) {
+            showError('firstName', 'First name must be at least 2 characters');
+            hasErrors = true;
+        }
+
+        if (!data.lastName || (data.lastName as string).trim().length < 2) {
+            showError('lastName', 'Last name must be at least 2 characters');
+            hasErrors = true;
+        }
+
+        if (!data.email || !validateEmail(data.email as string)) {
+            showError('email', 'Please enter a valid email address');
+            hasErrors = true;
+        }
+
+        if (!data.phone || !validatePhone(data.phone as string)) {
+            showError(
+                'phone',
+                'Please enter a valid phone number (at least 10 digits)',
+            );
+            hasErrors = true;
+        }
+
+        if (
+            !data.companyName ||
+            (data.companyName as string).trim().length < 2
+        ) {
+            showError(
+                'companyName',
+                'Company name must be at least 2 characters',
+            );
+            hasErrors = true;
+        }
+
+        if (hasErrors) {
+            return;
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText?.classList.add('hidden');
+        submitLoading?.classList.remove('hidden');
+
+        try {
+            // TODO: Replace this with your actual API endpoint
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                successMessage?.classList.remove('hidden');
+                form?.reset();
+
+                // Close modal after 3 seconds
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+            } else {
+                throw new Error('Submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            errorMessage?.classList.remove('hidden');
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitText?.classList.remove('hidden');
+            submitLoading?.classList.add('hidden');
+        }
+    });
+
+    // Real-time validation
+    const inputs = form?.querySelectorAll('input, textarea');
+    inputs?.forEach(input => {
+        input.addEventListener('blur', () => {
+            const fieldName = input.getAttribute('name');
+            if (fieldName) {
+                clearError(fieldName);
+            }
+        });
+    });
+</script>

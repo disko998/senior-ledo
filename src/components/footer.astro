@@ -22,8 +22,8 @@ import markerIcon from "@/assets/icons/marker.svg";
 
           <!-- Description Text -->
           <p class="leading-relaxed">
-            Helping senior living communities fill vacancies through expert digital 
-            marketing and proven lead generation strategies.
+            Helping senior living communities fill vacancies through expert
+            digital marketing and proven lead generation strategies.
           </p>
         </div>
 
@@ -40,9 +40,12 @@ import markerIcon from "@/assets/icons/marker.svg";
           <div class="border-t border-gray-300"></div>
 
           <!-- Contact Details -->
-          <div class="space-y-4">
+          <div class="py-2">
             <!-- Email -->
-            <div class="flex items-center space-x-3">
+            <a
+              href="mailto:office@seniorlead.com"
+              class="flex items-center space-x-3"
+            >
               <div class="flex w-5 items-center justify-center">
                 <Image
                   src={envelopeIcon}
@@ -51,10 +54,10 @@ import markerIcon from "@/assets/icons/marker.svg";
                 />
               </div>
               <span class="text-dark-gray">office@seniorlead.com</span>
-            </div>
+            </a>
 
             <!-- Phone -->
-            <div class="flex items-center space-x-3">
+            <!-- <a href="tel:+584248258" class="flex items-center space-x-3">
               <div class="flex w-5 items-center justify-center">
                 <Image
                   src={phoneIcon}
@@ -63,62 +66,49 @@ import markerIcon from "@/assets/icons/marker.svg";
                 />
               </div>
               <span class="text-dark-gray">+584/248-258</span>
-            </div>
-
-            <!-- Location -->
-            <div class="flex items-center space-x-3">
-              <div class="flex w-5 items-center justify-center">
-                <Image
-                  src={markerIcon}
-                  alt="Location"
-                  class="h-full w-full object-contain"
-                />
-              </div>
-              <span class="text-dark-gray"
-                >441 Leo Street, Denver, Colorado</span
-              >
-            </div>
+            </a>
+          </div> -->
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Second Part of Footer -->
-    <div
-      class="rounded-[10px] border border-gray-300 bg-[#FAFAFA] px-6 py-5 sm:px-10 sm:py-8"
-    >
+      <!-- Second Part of Footer -->
       <div
-        class="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0"
+        class="mt-4 rounded-[10px] border border-gray-300 bg-[#FAFAFA] px-6 py-5 sm:px-10 sm:py-8"
       >
-        <!-- Left Content Area -->
-        <div class="text-center md:text-left">
-          <p
-            class="text-primary! text-sm! font-medium sm:text-base! lg:text-xl!"
-          >
-            Copyright © 2025 SeniorLead. All rights reserved.
-          </p>
-        </div>
+        <div
+          class="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0"
+        >
+          <!-- Left Content Area -->
+          <div class="text-center md:text-left">
+            <p
+              class="text-primary! text-sm! font-medium sm:text-base! lg:text-xl!"
+            >
+              Copyright © 2025 SeniorLead. All rights reserved.
+            </p>
+          </div>
 
-        <!-- Right Content Area -->
-        <div class="flex space-x-6">
-          <a
-            href="#"
-            class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
-          >
-            Legal
-          </a>
-          <a
-            href="#"
-            class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
-          >
-            Privacy Policy
-          </a>
-          <a
-            href="#"
-            class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
-          >
-            Terms of Use
-          </a>
+          <!-- Right Content Area -->
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
+            >
+              Legal
+            </a>
+            <a
+              href="#"
+              class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              class="hover:text-primary text-dark-gray transition-colors duration-300 lg:text-[18px]!"
+            >
+              Terms of Use
+            </a>
+          </div>
         </div>
       </div>
     </div>

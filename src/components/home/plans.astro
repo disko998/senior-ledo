@@ -1,322 +1,303 @@
 ---
-import Button from '../button.astro';
-import checkIcon from '../../assets/icons/check.svg';
-import Image from 'astro/components/Image.astro';
-import girlOnMeet from '../../../public/images/home/plans/girl-on-meeting.jpg';
+import Button from "../button.astro";
+import checkIcon from "../../assets/icons/check.svg";
+import Image from "astro/components/Image.astro";
+import girlOnMeet from "../../../public/images/home/plans/girl-on-meeting.jpg";
 ---
 
-<section id='plans' class='section bg-white'>
-    <div class='container mx-auto px-4'>
-        <!-- Header Section -->
-        <div class='mb-6 max-w-4xl lg:mb-8'>
-            <h2
-                class='text-primary mb-2 text-3xl font-bold uppercase sm:mb-4 lg:text-4xl xl:text-5xl'
-            >
-                Our Plans
-            </h2>
-            <p class='text-lg'>Choose the Right Solution for Your Facility</p>
-        </div>
-
-        <div class='grid gap-4 md:gap-8 lg:grid-cols-2'>
-            <!-- Standard Plan Card -->
-            <div
-                class='border-border-gray col-start-1 col-end-2 flex flex-1 flex-col rounded-[10px] border bg-white p-4 text-center md:p-8'
-            >
-                <!-- Icon -->
-                <div class='mb-1 flex justify-center'>
-                    <div
-                        class='bg-primary flex h-10 w-10 items-center justify-center rounded-full md:h-[44px] md:w-[44px]'
-                    >
-                        <div class='h-5 w-5 rounded-full border-2 border-white'>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Plan Name -->
-                <p class='mb-4 text-sm! font-medium'>Standard plan</p>
-
-                <!-- Price -->
-                <div class='mb-5 flex items-end justify-center sm:mb-6'>
-                    <p
-                        class='text-primary! font-sofia-sans-condensed text-3xl! leading-none font-bold sm:text-4xl! md:text-5xl! xl:text-[70px]!'
-                    >
-                        $1200
-                    </p>
-                    <p class='text-primary! mb-1 font-medium md:mb-2.5'>
-                        / month
-                    </p>
-                </div>
-
-                <!-- Description -->
-                <p class='mb-5 self-start leading-relaxed sm:mb-6 lg:mb-8'>
-                    For facilities looking to consistently attract new
-                    residents.
-                </p>
-
-                <div class='flex flex-1 items-end justify-center'>
-                    <!-- Button -->
-                    <Button
-                        variant='primary'
-                        size='xl'
-                        class='mt-auto'
-                        fullWidth
-                    >
-                        ORDER NOW
-                    </Button>
-                </div>
-            </div>
-
-            <!-- Standard Plan Features -->
-            <div
-                class='border-border-gray col-start-1 col-end-2 mb-6 rounded-[10px] border bg-white p-4 md:p-8 lg:row-start-2 lg:row-end-3'
-            >
-                <div class='divide-y divide-gray-200'>
-                    <!-- Full Features (Blue Checkmarks) -->
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Targeted advertising campaigns for senior living
-                            inquiries</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Advanced lead tracking and monthly reporting</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Exclusive targeting to optimize marketing spend</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Guaranteed exclusivity in your area</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Proven strategies tailored to senior living
-                            facilities</span
-                        >
-                    </div>
-
-                    <!-- Partial Features (Faded Checkmarks) -->
-                    <div
-                        class='mb-4 flex items-center space-x-3 pb-4 opacity-50'
-                    >
-                        <Image src={checkIcon} alt='check icon' />
-                        <span
-                            class='decoration text-dark-gray line-through decoration-gray-600'
-                            >Full social media management (Facebook, Instagram,
-                            Linkedin)</span
-                        >
-                    </div>
-
-                    <div
-                        class='mb-4 flex items-center space-x-3 pb-4 opacity-50'
-                    >
-                        <Image src={checkIcon} alt='check icon' />
-                        <span
-                            class='decoration text-dark-gray line-through decoration-gray-600'
-                            >Custom content creation tailored to your brand</span
-                        >
-                    </div>
-
-                    <div
-                        class='mb-4 flex items-center space-x-3 pb-4 opacity-50'
-                    >
-                        <Image src={checkIcon} alt='check icon' />
-                        <span
-                            class='decoration text-dark-gray line-through decoration-gray-600'
-                            >Engaging post designs and consistent updates</span
-                        >
-                    </div>
-
-                    <div class='flex items-center space-x-3 opacity-50'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span
-                            class='decoration text-dark-gray line-through decoration-gray-600'
-                            >Monthly social media performance analytics</span
-                        >
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Plan Card -->
-            <div
-                class='border-border-gray rounded-[10px] border bg-white p-4 text-center md:p-8'
-            >
-                <!-- Icon -->
-                <div class='mb-1 flex justify-center'>
-                    <div class='mb-1 flex justify-center'>
-                        <div
-                            class='bg-primary flex h-10 w-10 items-center justify-center rounded-full md:h-[44px] md:w-[44px]'
-                        >
-                            <div
-                                class='h-5 w-5 rounded-full border-2 border-white'
-                            >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Plan Name -->
-                <p class='mb-4 text-sm! font-medium'>Profesional plan</p>
-
-                <!-- Price -->
-                <div class='mb-5 flex items-end justify-center sm:mb-6'>
-                    <p
-                        class='text-primary! font-sofia-sans-condensed text-3xl! leading-none font-bold sm:text-4xl! md:text-5xl! xl:text-[70px]!'
-                    >
-                        $1600
-                    </p>
-                    <p class='text-primary! mb-1 font-medium md:mb-2 xl:mb-2.5'>
-                        / month
-                    </p>
-                </div>
-
-                <!-- Description -->
-                <p class='mb-5 leading-relaxed sm:mb-6 lg:mb-8'>
-                    Comprehensive solution for lead generation and social media
-                    management.
-                </p>
-
-                <!-- Button -->
-                <Button variant='primary' size='xl' fullWidth>
-                    ORDER NOW
-                </Button>
-            </div>
-
-            <!-- Professional Plan Features -->
-
-            <div
-                class='border-border-gray h-fit rounded-[10px] border bg-white p-4 md:p-8'
-            >
-                <div class='divide-y divide-gray-200'>
-                    <!-- All Features (Blue Checkmarks) -->
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Targeted advertising campaigns for senior living
-                            inquiries</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Advanced lead tracking and monthly reporting</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Exclusive targeting to optimize marketing spend</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Guaranteed exclusivity in your area</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Proven strategies tailored to senior living
-                            facilities</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Full social media management (Facebook, Instagram,
-                            Linkedin)</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Custom content creation tailored to your brand</span
-                        >
-                    </div>
-
-                    <div class='mb-4 flex items-center space-x-3 pb-4'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Engaging post designs and consistent updates</span
-                        >
-                    </div>
-
-                    <div class='flex items-center space-x-3'>
-                        <Image src={checkIcon} alt='check icon' />
-                        <span class='text-dark-gray'
-                            >Monthly social media performance analytics</span
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Consultation Section -->
-        <div
-            class='mt-20 grid grid-cols-1 items-center gap-10 sm:gap-12 lg:mt-32 lg:grid-cols-2'
-        >
-            <!-- Left Side - Image -->
-            <div class='order-2 lg:order-1'>
-                <h2
-                    class='text-primary text-2xl font-bold uppercase lg:text-3xl'
-                >
-                    Click below to schedule your free consultation now!
-                </h2>
-
-                <p class='mt-4 mb-6 leading-relaxed sm:mt-6 sm:mb-8'>
-                    Have any questions? Reach out to us directly at [email] or
-                    [phone number]. We’re happy to discuss how we can support
-                    your facility’s growth.
-                </p>
-
-                <button
-                    class='plans-schedule-btn border-primary text-primary hover:bg-primary rounded-lg border-2 bg-white px-8 py-4 font-bold uppercase transition-all hover:text-white focus:ring-2 focus:ring-white focus:outline-none md:px-10 lg:w-[300px] lg:py-5 lg:text-xl'
-                >
-                    Schedule now
-                </button>
-            </div>
-
-            <!-- Right Side - Text Content -->
-            <div class='order-1 lg:order-2'>
-                <Image
-                    src={girlOnMeet}
-                    alt='Elderly people having lunch together in a care facility'
-                    class='h-auto w-full rounded-lg object-cover'
-                    loading='lazy'
-                />
-            </div>
-        </div>
+<section id="plans" class="section bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Header Section -->
+    <div class="mb-6 max-w-4xl lg:mb-8">
+      <h2
+        class="text-primary mb-2 text-3xl font-bold uppercase sm:mb-4 lg:text-4xl xl:text-5xl"
+      >
+        Our Plans
+      </h2>
+      <p class="text-lg">Choose the Right Solution for Your Facility</p>
     </div>
+
+    <div class="grid gap-4 md:gap-8 lg:grid-cols-2">
+      <!-- Standard Plan Card -->
+      <div
+        class="border-border-gray col-start-1 col-end-2 flex flex-1 flex-col rounded-[10px] border bg-white p-4 text-center md:p-8"
+      >
+        <!-- Icon -->
+        <div class="mb-1 flex justify-center">
+          <div
+            class="bg-primary flex h-10 w-10 items-center justify-center rounded-full md:h-[44px] md:w-[44px]"
+          >
+            <div class="h-5 w-5 rounded-full border-2 border-white"></div>
+          </div>
+        </div>
+
+        <!-- Plan Name -->
+        <p class="mb-4 text-sm! font-medium">Standard plan</p>
+
+        <!-- Price -->
+        <div class="mb-5 flex items-end justify-center sm:mb-6">
+          <p
+            class="text-primary! font-sofia-sans-condensed text-3xl! leading-none font-bold sm:text-4xl! md:text-5xl! xl:text-[70px]!"
+          >
+            $1200
+          </p>
+          <p class="text-primary! mb-1 font-medium md:mb-2.5">/ month</p>
+        </div>
+
+        <!-- Description -->
+        <p class="mb-5 self-start leading-relaxed sm:mb-6 lg:mb-8">
+          For facilities looking to consistently attract new residents.
+        </p>
+
+        <div class="flex flex-1 items-end justify-center">
+          <!-- Button -->
+          <Button
+            class="contact-modal"
+            variant="primary"
+            size="xl"
+            class="mt-auto"
+            fullWidth
+          >
+            ORDER NOW
+          </Button>
+        </div>
+      </div>
+
+      <!-- Standard Plan Features -->
+      <div
+        class="border-border-gray col-start-1 col-end-2 mb-6 rounded-[10px] border bg-white p-4 md:p-8 lg:row-start-2 lg:row-end-3"
+      >
+        <div class="divide-y divide-gray-200">
+          <!-- Full Features (Blue Checkmarks) -->
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Targeted advertising campaigns for senior living inquiries</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Advanced lead tracking and monthly reporting</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Exclusive targeting to optimize marketing spend</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Guaranteed exclusivity in your area</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Proven strategies tailored to senior living facilities</span
+            >
+          </div>
+
+          <!-- Partial Features (Faded Checkmarks) -->
+          <div class="mb-4 flex items-center space-x-3 pb-4 opacity-50">
+            <Image src={checkIcon} alt="check icon" />
+            <span
+              class="decoration text-dark-gray line-through decoration-gray-600"
+              >Full social media management (Facebook, Instagram, Linkedin)</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4 opacity-50">
+            <Image src={checkIcon} alt="check icon" />
+            <span
+              class="decoration text-dark-gray line-through decoration-gray-600"
+              >Custom content creation tailored to your brand</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4 opacity-50">
+            <Image src={checkIcon} alt="check icon" />
+            <span
+              class="decoration text-dark-gray line-through decoration-gray-600"
+              >Engaging post designs and consistent updates</span
+            >
+          </div>
+
+          <div class="flex items-center space-x-3 opacity-50">
+            <Image src={checkIcon} alt="check icon" />
+            <span
+              class="decoration text-dark-gray line-through decoration-gray-600"
+              >Monthly social media performance analytics</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Plan Card -->
+      <div
+        class="border-border-gray rounded-[10px] border bg-white p-4 text-center md:p-8"
+      >
+        <!-- Icon -->
+        <div class="mb-1 flex justify-center">
+          <div class="mb-1 flex justify-center">
+            <div
+              class="bg-primary flex h-10 w-10 items-center justify-center rounded-full md:h-[44px] md:w-[44px]"
+            >
+              <div class="h-5 w-5 rounded-full border-2 border-white"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan Name -->
+        <p class="mb-4 text-sm! font-medium">Profesional plan</p>
+
+        <!-- Price -->
+        <div class="mb-5 flex items-end justify-center sm:mb-6">
+          <p
+            class="text-primary! font-sofia-sans-condensed text-3xl! leading-none font-bold sm:text-4xl! md:text-5xl! xl:text-[70px]!"
+          >
+            $1600
+          </p>
+          <p class="text-primary! mb-1 font-medium md:mb-2 xl:mb-2.5">
+            / month
+          </p>
+        </div>
+
+        <!-- Description -->
+        <p class="mb-5 leading-relaxed sm:mb-6 lg:mb-8">
+          Comprehensive solution for lead generation and social media
+          management.
+        </p>
+
+        <!-- Button -->
+        <Button class="contact-modal" variant="primary" size="xl" fullWidth>
+          ORDER NOW
+        </Button>
+      </div>
+
+      <!-- Professional Plan Features -->
+
+      <div
+        class="border-border-gray h-fit rounded-[10px] border bg-white p-4 md:p-8"
+      >
+        <div class="divide-y divide-gray-200">
+          <!-- All Features (Blue Checkmarks) -->
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Targeted advertising campaigns for senior living inquiries</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Advanced lead tracking and monthly reporting</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Exclusive targeting to optimize marketing spend</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Guaranteed exclusivity in your area</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Proven strategies tailored to senior living facilities</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Full social media management (Facebook, Instagram, Linkedin)</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Custom content creation tailored to your brand</span
+            >
+          </div>
+
+          <div class="mb-4 flex items-center space-x-3 pb-4">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Engaging post designs and consistent updates</span
+            >
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <Image src={checkIcon} alt="check icon" />
+            <span class="text-dark-gray"
+              >Monthly social media performance analytics</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consultation Section -->
+    <div
+      class="mt-20 grid grid-cols-1 items-center gap-10 sm:gap-12 lg:mt-32 lg:grid-cols-2"
+    >
+      <!-- Left Side - Image -->
+      <div class="order-2 lg:order-1">
+        <h2 class="text-primary text-2xl font-bold uppercase lg:text-3xl">
+          Click below to schedule your free consultation now!
+        </h2>
+
+        <p class="mt-4 mb-6 leading-relaxed sm:mt-6 sm:mb-8">
+          Have any questions? Reach out to us directly at office@seniorlead.com.
+          We’re happy to discuss how we can support your facility’s growth.
+        </p>
+
+        <button
+          class="plans-schedule-btn contact-modal border-primary text-primary hover:bg-primary rounded-lg border-2 bg-white px-8 py-4 font-bold uppercase transition-all hover:text-white focus:ring-2 focus:ring-white focus:outline-none md:px-10 lg:w-[300px] lg:py-5 lg:text-xl"
+        >
+          Schedule now
+        </button>
+      </div>
+
+      <!-- Right Side - Text Content -->
+      <div class="order-1 lg:order-2">
+        <Image
+          src={girlOnMeet}
+          alt="Elderly people having lunch together in a care facility"
+          class="h-auto w-full rounded-lg object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
 </section>
 
 <script>
-    // Open modal when button is clicked
-    document.addEventListener('DOMContentLoaded', () => {
-        const scheduleBtn = document.querySelector('.plans-schedule-btn');
+  // Open modal when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const contactModals = document.getElementsByClassName("contact-modal");
 
-        scheduleBtn?.addEventListener('click', () => {
-            document.dispatchEvent(new CustomEvent('openContactModal'));
-        });
+    Array.from(contactModals).forEach((element) => {
+      element.addEventListener("click", () => {
+        document.dispatchEvent(new CustomEvent("openContactModal"));
+      });
     });
+  });
 </script>

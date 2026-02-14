@@ -6,12 +6,12 @@ export const prerender = false;
 
 // Configure SMTP transporter using environment variables
 const transporter = nodemailer.createTransport({
-  host: import.meta.env.SMTP_HOST,
-  port: parseInt(import.meta.env.SMTP_PORT || "465"),
+  host: import.meta.env.SMTP_HOST || process.env.SMTP_HOST,
+  port: parseInt(import.meta.env.SMTP_PORT || process.env.SMTP_PORT || "465"),
   secure: true, // SSL/TLS
   auth: {
-    user: import.meta.env.SMTP_USER,
-    pass: import.meta.env.SMTP_PASS,
+    user: import.meta.env.SMTP_USER || process.env.SMTP_USER,
+    pass: import.meta.env.SMTP_PASS || process.env.SMTP_PASS,
   },
 });
 
@@ -49,8 +49,8 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Send email notification
     const mailOptions = {
-      from: import.meta.env.SMTP_FROM,
-      to: import.meta.env.SMTP_TO,
+      from: import.meta.env.SMTP_FROM || process.env.SMTP_FROM,
+      to: import.meta.env.SMTP_TO || process.env.SMTP_TO,
       subject: `New Contact Form Submission from ${firstName} ${lastName}`,
       html: `
         <!DOCTYPE html>
@@ -116,15 +116,6 @@ Submitted at: ${new Date().toLocaleString()}
 
     // Send the email
     await transporter.sendMail(mailOptions);
-
-    console.log("Contact form submission sent:", {
-      firstName,
-      lastName,
-      email,
-      phone,
-      companyName,
-      timestamp: new Date().toISOString(),
-    });
 
     return new Response(
       JSON.stringify({
